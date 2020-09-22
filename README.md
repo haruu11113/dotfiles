@@ -10,6 +10,8 @@ mkdir ~/.vim/dein/
 cd ~/.vim/dein/
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 
+.vimrcの9行目のif文下に```call dein#add('リポジトリ')```て感じで書く
+
 
 ## 参考にした
 - vundleの設定について
