@@ -10,11 +10,6 @@ fi
 # lsの時に色をつける
 export LSCOLORS=gxHxcxdxbxegedabagacad
 
-#cdと同時にlsする
-function cdls(){
-    \cd "$@" && ls -G
-}
-
 # Display Git Branch status
 IT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
