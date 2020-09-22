@@ -12,6 +12,7 @@ if dein#load_state('$HOME/.vim/dein')
     " 追加したいプラグインを入れてい
     call dein#add('raphamorim/lucario') "colorテーマ
     call dein#add('iamcco/markdown-preview.vim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'], 'build': 'cd app & yarn install' }) "markdown
+    call dein#add('ervandew/supertab')
 
     " Required:
     call dein#end()
