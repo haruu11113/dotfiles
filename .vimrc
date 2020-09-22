@@ -13,7 +13,7 @@ if dein#load_state('$HOME/.vim/dein')
     call dein#add('raphamorim/lucario') "colorテーマ
     call dein#add('iamcco/markdown-preview.vim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'], 'build': 'cd app & yarn install' }) "markdown
     call dein#add('ervandew/supertab')
-
+    call dein#add('scrooloose/nerdtree')
     " Required:
     call dein#end()
     call dein#save_state()
@@ -109,3 +109,5 @@ set background=dark "背景色
 
 "iamcco/markdown-preview.nvim Markdown用
 
+"scrooloose/nerdtree
+autocmd VimEnter * execute 'NERDTree'
