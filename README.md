@@ -18,6 +18,8 @@ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh >
 
 
 ## 参考にした
-- vundleの設定について  
-http://holypp.hatenablog.com/entry/20110515/1305443997
+~~- vundleの設定について(使ってない20200922)~~   
+~~Http://holypp.hatenablog.com/entry/20110515/1305443997~~  
 
+- dein.vimの設定について
+https://ashnoa.hatenablog.com/entry/2019/10/16/230202
