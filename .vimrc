@@ -110,4 +110,7 @@ set background=dark "背景色
 "iamcco/markdown-preview.nvim Markdown用
 
 "scrooloose/nerdtree
-autocmd VimEnter * execute 'NERDTree'
+
+"autocmd VimEnter * execute 'NERDTree' "vim起動時常時nerdtreeを起動
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden = 1 "隠しファイルを常に表示
