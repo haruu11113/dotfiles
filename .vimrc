@@ -14,6 +14,8 @@ if dein#load_state('$HOME/.vim/dein')
     call dein#add('iamcco/markdown-preview.vim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'], 'build': 'cd app & yarn install' }) "markdown
     call dein#add('ervandew/supertab')
     call dein#add('scrooloose/nerdtree')
+    call dein#add('itchyny/lightline.vim')
+    call dein#add('Yggdroot/indentLine')
     " Required:
     call dein#end()
     call dein#save_state()
@@ -107,10 +109,21 @@ set t_Co=256 "256色
 set termguicolors "truecolor
 set background=dark "背景色
 
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+
 "iamcco/markdown-preview.nvim Markdown用
 
 "scrooloose/nerdtree
-
 "autocmd VimEnter * execute 'NERDTree' "vim起動時常時nerdtreeを起動
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1 "隠しファイルを常に表示
+

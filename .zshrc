@@ -63,7 +63,7 @@ zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
 zplug "mollifier/anyframe"
 
 # ディレクトリ移動を高速化（fzf であいまい検索）
-zpplug "b4b4r07/enhancd", use:init.sh
+#zpplug "b4b4r07/enhancd", use:init.sh
 
 # git のローカルリポジトリを一括管理（fzf でリポジトリへジャンプ）
 # zplug "motemen/ghq", as:command, from:gh-r
@@ -98,3 +98,6 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # プロンプト
 PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color} %. $ "
+
+# 自作コマンド
+alias ide="sh ~/ide"
