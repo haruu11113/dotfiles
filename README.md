@@ -23,3 +23,7 @@ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh >
 
 - dein.vimの設定について
 https://ashnoa.hatenablog.com/entry/2019/10/16/230202
+
+- nerdtreeの設定・コマンド  
+https://honmushi.com/2020/04/20/nerdtree-vim/  
+
