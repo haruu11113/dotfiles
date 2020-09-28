@@ -1,6 +1,5 @@
 #!/bin/bash
-
-dotfiles=(.tmux.conf .vimrc .zshrc .bashrc .bash_profile .emacs.d)
+dotfiles=(".tmux.conf" ".vimrc" ".zshrc" ".bashrc" ".bash_profile" ".emacs.d")
 for f in ${dotfiles[@]}; do
     echo "リンク作成を開始します"
     if [ -e ~/${f} ]; then

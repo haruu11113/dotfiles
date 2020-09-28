@@ -21,5 +21,3 @@ export PYENV_ROOT=/usr/local/var/pyenv
 # pyenvさんに自動補完機能を提供してもらう
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
-## 文字の色などを指定
-export PS1="\[\e[32m\]\u \[\e[37m\]\W \$ "
