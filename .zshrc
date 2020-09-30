@@ -4,6 +4,7 @@
 alias tree="tree -NC"
 alias be="bundle exec"
 
+export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$PATH"
 #export PATH=$HOME/.nodebrew/current/bin:$PATH
 #export NODEBREW_ROOT=/usr/local/var/nodebrew
 
@@ -61,8 +62,6 @@ zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
 
 # fzf でよく使う関数の詰め合わせ
 zplug "mollifier/anyframe"
-alias tree="tree -NC"
-alias be="bundle exec" 
 
 
 # ディレクトリ移動を高速化（fzf であいまい検索）
@@ -91,12 +90,12 @@ GIT_PS1_SHOWSTASHSTATE=true
 # GIT_PS1_SHOWUPSTREAM=auto
 
 # pyenvさんに~/.pyenvではなく、/usr/loca/var/pyenvを使うようにお願いする
-# export PYENV_ROOT=/usr/local/var/pyenv
+#export PYENV_ROOT=/usr/local/var/pyenv
 # pyenvさんに自動補完機能を提供してもらう
-# if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # プロンプト
-PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color} %. $ "
+PROMPT=" %(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color} %. $ "
 
 # 自作コマンド
 alias ide="sh ~/ide"
