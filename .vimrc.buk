@@ -120,7 +120,15 @@ set background=dark "背景色
 "reireias/vim-cheatsheet
 let g:cheatsheet#cheat_file = '~/.cheatsheet.md'
 
-"vim-airline/vim-airline
+""vim-airline/vim-airline
+let g:airline_theme = 'wombat'
+set laststatus=2
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#wordcount#enabled = 0
+let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'y', 'z']]
+let g:airline_section_c = '%t'
+lvim-airline/vim-airline
 let g:airline_theme = 'wombat'
 set laststatus=2
 let g:airline#extensions#branch#enabled = 1

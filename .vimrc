@@ -77,9 +77,9 @@ set showcmd "コマンドを最下部に表示
 "set wildmenu 
 
 "自動閉じカッコ
-"imap { {}<LEFT>
-"imap [ []<LEFT>
-"imap ( ()<LEFT>
+imap { {}<LEFT>
+imap [ []<LEFT>
+imap ( ()<LEFT>
 
 "========
 "その他
@@ -102,3 +102,13 @@ set showmatch "閉じカッコ入力時、対応する過去に一瞬移動
 "scrooloose/nerdtree
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+
+"vim-airline/vim-airline
+let g:airline_theme = 'wombat'
+set laststatus=2
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#wordcount#enabled = 0
+let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'y', 'z']]
+let g:airline_section_c = '%t'
+
