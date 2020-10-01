@@ -14,6 +14,7 @@ if dein#load_state('$HOME/.vim/dein')
     call dein#add('scrooloose/nerdtree')
     call dein#add('itchyny/lightline.vim')
     call dein#add('Yggdroot/indentLine')
+    call dein#add('reireias/vim-cheatsheet')
     "下のバーの装飾
     call dein#add('vim-airline/vim-airline')
     call dein#add('vim-airline/vim-airline-themes')
@@ -74,8 +75,14 @@ set showcmd "コマンドを最下部に表示
 "補完
 "========
 "コマンドをlist表示かつTabで次の候補を選択
-"set wildmenu 
-
+set wildmenu 
+""最後のカーソル位置を復元する
+if has("autocmd")
+    autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \   exe "normal! g'\"" |
+    \ endif
+endif
 "自動閉じカッコ
 imap { {}<LEFT>
 imap [ []<LEFT>
@@ -111,4 +118,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#wordcount#enabled = 0
 let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'y', 'z']]
 let g:airline_section_c = '%t'
+
+"reireias/vim-cheatsheet
+let g:cheatsheet#cheat_file = '$HOME/.cheetsheet'
 
