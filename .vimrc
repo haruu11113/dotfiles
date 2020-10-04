@@ -15,6 +15,7 @@ if dein#load_state('$HOME/.vim/dein')
     call dein#add('itchyny/lightline.vim')
     call dein#add('Yggdroot/indentLine')
     call dein#add('reireias/vim-cheatsheet')
+    call dein#add('leafgarland/typescript-vim')
     "下のバーの装飾
     call dein#add('vim-airline/vim-airline')
     call dein#add('vim-airline/vim-airline-themes')
@@ -99,7 +100,7 @@ set showmatch "閉じカッコ入力時、対応する過去に一瞬移動
 "plugin setting for dein
 "======
 "raphamorim/lucario テーマ追加
-"colorscheme lucario "色のテーマ
+colorscheme lucario "色のテーマ
 "set t_Co=256 "256色
 "set termguicolors "truecolor
 "set background=dark "背景色
@@ -111,7 +112,7 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 "vim-airline/vim-airline
-let g:airline_theme = 'wombat'
+"let g:airline_theme = 'Black'
 set laststatus=2
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
