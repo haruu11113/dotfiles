@@ -90,7 +90,7 @@ GIT_PS1_SHOWSTASHSTATE=true
 # GIT_PS1_SHOWUPSTREAM=auto
 
 # pyenvさんに~/.pyenvではなく、/usr/loca/var/pyenvを使うようにお願いする
-#export PYENV_ROOT=/usr/local/var/pyenv
+export PYENV_ROOT=/usr/local/var/pyenv
 # pyenvさんに自動補完機能を提供してもらう
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 

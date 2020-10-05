@@ -16,6 +16,7 @@ if dein#load_state('$HOME/.vim/dein')
     call dein#add('Yggdroot/indentLine')
     call dein#add('reireias/vim-cheatsheet')
     call dein#add('leafgarland/typescript-vim')
+    call dein#add('tpope/vim-fugitive')
     "下のバーの装飾
     call dein#add('vim-airline/vim-airline')
     call dein#add('vim-airline/vim-airline-themes')
@@ -95,7 +96,6 @@ imap ( ()<LEFT>
 set showmatch "閉じカッコ入力時、対応する過去に一瞬移動
 
 
-
 "======
 "plugin setting for dein
 "======
@@ -123,3 +123,9 @@ let g:airline_section_c = '%t'
 "reireias/vim-cheatsheet
 let g:cheatsheet#cheat_file = '$HOME/.cheetsheet'
 
+" Your vimrc
+function! GitStatus()
+    let [a,m,r] = GitGutterGetHunkSummary()
+    return printf('+%d ~%d -%d', a, m, r)
+endfunction
+set statusline+=%{GitStatus()}
