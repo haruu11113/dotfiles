@@ -160,7 +160,7 @@ let g:airline#extensions#tabline#buffer_idx_format = {
     \ '8': '8 ',
     \ '9': '9 '
     \} "tabの番号を全角にする
-" set laststatus=2
+ set laststatus=2
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1 ":e ファイル名で新タブで開く
 let g:airline#extensions#wordcount#enabled=0

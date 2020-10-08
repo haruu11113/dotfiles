@@ -1,1 +1,15 @@
 #memo
+
+#tmux
+tmux new -s <name>
+<C+b> w
+<C+b> o
+<C+b> c
+<C+b> x
+<C+b> p
+
+tmux ls
+#vim
+<C+n> n
+
+#
