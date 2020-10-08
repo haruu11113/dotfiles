@@ -5,6 +5,11 @@ sh link.sh
 
 ```
 
+## install neovim
+```
+brew install neovim
+```
+
 ## dein.vim
 ### How to install dein
 ```
@@ -27,3 +32,5 @@ https://ashnoa.hatenablog.com/entry/2019/10/16/230202
 - nerdtreeの設定・コマンド  
 https://honmushi.com/2020/04/20/nerdtree-vim/  
 
+- nerdtreeのファイルアイコン
+https://qiita.com/park-jh/items/4358d2d33a78ec0a2b5c

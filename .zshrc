@@ -1,9 +1,9 @@
-#export JAVA_HOME=`/usr/libexec/java_home -v "11"`
+#eset ttimeoutlen=50xport JAVA_HOME=`/usr/libexec/java_home -v "11"`
 #PATH=${JAVA_HOME}/bin:${PATH}
 
 alias tree="tree -NC"
 alias be="bundle exec"
-
+alias ll="ls -l"
 export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$PATH"
 #export PATH=$HOME/.nodebrew/current/bin:$PATH
 #export NODEBREW_ROOT=/usr/local/var/nodebrew
@@ -36,11 +36,11 @@ if ! zplug check --verbose; then
 fi
 
 # コマンドをリンクして、PATH に追加し、プラグインは読み込む
-zplug load –verbose
+# zplug load –verbose
 
 # 補完を更に強化する
 # pacman や yaourt のパッケージリストも補完するようになる
-zplug "zsh-users/zsh-completions"
+# zplug "zsh-users/zsh-completions"
 
 # git の補完を効かせる
 # 補完＆エイリアスが追加される
@@ -48,20 +48,20 @@ zplug "plugins/git",   from:oh-my-zsh
 zplug "peterhurford/git-aliases.zsh"
 
 # 入力途中に候補をうっすら表示
-zplug "zsh-users/zsh-autosuggestions"
+# zplug "zsh-users/zsh-autosuggestions"
 
 # コマンドを種類ごとに色付け
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+# zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # ヒストリの補完を強化する
-zplug "zsh-users/zsh-history-substring-search", defer:3
+# zplug "zsh-users/zsh-history-substring-search", defer:3
 
 # 本体（連携前提のパーツ）
-zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
-zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
+# zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
+# zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
 
 # fzf でよく使う関数の詰め合わせ
-zplug "mollifier/anyframe"
+# zplug "mollifier/anyframe"
 
 
 # ディレクトリ移動を高速化（fzf であいまい検索）

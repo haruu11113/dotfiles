@@ -16,3 +16,6 @@ for f in ${dotfiles[@]}; do
     fi
 done
 
+echo ""~/.config/nvim" に.vimrcのリンクを作成"
+ln -s ${PWD}/.vimrc ~/.config/nvim/
+echo "======"
