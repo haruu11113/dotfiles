@@ -26,10 +26,11 @@ HISTSIZE=10000
 SAVEHIST=10000
 export LSCOLORS=gxHxcxdxbxegedabagacad #lsの時に色をつける
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' #大小文字を区別しない
+PROMPT=" %F{green}%n%f %c $ " #プロンプト
+
+#補完
 autoload -U compinit
 compinit
-
-PROMPT=" %(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color} %. $ " #プロンプト
 
 # =======
 # alias
@@ -59,27 +60,11 @@ export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$P
 # =======
 # plugin
 # =======
-# 手動で```zplug install && zplugin load```すればいい
-# ここに使いたいプラグインを書いておく
-
-# zplugin load momo-lab/zsh-abbrev-alias # 略語を展開する
-# zplugin load zsh-users/zsh-syntax-highlighting # 実行可能なコマンドに色付け
-# zplugin load –verbose #コマンドをリンクして、PATH に追加し、プラグインは読み込む
-# zplugin ice wait'2'
-# zplugin light zsh-users/zsh-completions #補完を更に強化する pacman や yaourt のパッケージリストも補完するようになる
-
 # git の補完を効かせる。補完＆エイリアスが追加される
 # zplugin plugins/git, fromm:oh-my-zsh
-zplugin ice wait'2'
-zplugin light peterhurford/git-aliases.zsh
-# zplugin "zsh-users/zsh-autosuggestions" #入力途中に候補をうっすら表示
-zplugin ice wait'2'
-zplugin light zsh-users/zsh-history-substring-search #ヒストリの補完を強化する
-
-# 本体（連携前提のパーツ）
-# zplugin "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
-# zplugin "junegunn/fzf", as:command, use:bin/fzf-tmux
-# zplugin "mollifier/anyframe" #fzf でよく使う関数の詰め合わせ
-# zplugin "b4b4r07/enhancd", use:init.sh #fzfディレクトリ移動を高速化（fzf であいまい検索）
-# zplugin "motemen/ghq", as:command, from:gh-r #fzfgit のローカルリポジトリを一括管理（fzf でリポジトリへジャンプ）
+zinit ice wait'2'
+zinit light peterhurford/git-aliases.zsh
+# zinit "zsh-users/zsh-autosuggestions" #入力途中に候補をうっすら表示
+zinit ice wait'2'
+zinit light zsh-users/zsh-history-substring-search #ヒストリの補完を強化する
 
