@@ -64,7 +64,7 @@ export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$P
 # zplugin plugins/git, fromm:oh-my-zsh
 zinit ice wait'2'
 zinit light peterhurford/git-aliases.zsh
-# zinit "zsh-users/zsh-autosuggestions" #入力途中に候補をうっすら表示
+zinit light zsh-users/zsh-autosuggestions #入力途中に候補をうっすら表示
 zinit ice wait'2'
 zinit light zsh-users/zsh-history-substring-search #ヒストリの補完を強化する
 
