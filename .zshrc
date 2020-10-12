@@ -39,6 +39,7 @@ alias tree="tree -NC"
 alias be="bundle exec"
 alias ll="ls -l"
 alias ide="sh ~/ide"
+alias vbs="VBoxManage startvm --type headless"
 #rmをゴミ箱行きに変更
 if [ type trash-put &> /dev/null ]; then
     alias rm=trash-put
