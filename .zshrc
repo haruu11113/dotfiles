@@ -48,9 +48,16 @@ fi
 # PATH
 # =======
 # pyenvさんに~/.pyenvではなく、/usr/loca/var/pyenvを使うようにお願いする
-export PYENV_ROOT=/usr/local/var/pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi # pyenvさんに自動補完機能を提供してもらう
-export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$PATH"
+# export PYENV_ROOT=/usr/local/var/pyenv
+
+# Ubuntuのpyenv用の設定
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then;  eval "$(pyenv init -)"; fi
+
+# if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+# export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$PATH"
+
 #export PATH=$HOME/.nodebrew/current/bin:$PATH
 #export NODEBREW_ROOT=/usr/local/var/nodebrew
 #eset ttimeoutlen=50xport JAVA_HOME=`/usr/libexec/java_home -v "11"`

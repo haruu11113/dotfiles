@@ -21,6 +21,11 @@ cd ~/.vim/dein/
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 ```
 
+## 4. Install zplugin
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)" )
+```
+
 ## [Optional] Install neovim
 
 ```

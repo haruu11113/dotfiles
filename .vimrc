@@ -25,7 +25,7 @@ if dein#load_state('$HOME/.vim/dein')
     call dein#add('airblade/vim-gitgutter') "gitのdiff
     call dein#add('tpope/vim-commentary') "範囲コメントアウト
     " call dein#add('majutsushi/tagbar') ":tagbarで関数一覧が見れる
-    call dein#add('bpearson/vim-phpcs') ":CodeSniffでphpcsが走る
+    " call dein#add('bpearson/vim-phpcs') ":CodeSniffでphpcsが走る
     "下のバーの装飾
     call dein#add('vim-airline/vim-airline')
     call dein#add('vim-airline/vim-airline-themes')
@@ -57,7 +57,6 @@ set cursorline "カーソルがある行を強調
 set list listchars=tab:\▸\-
 set expandtab "tabの代わりに空白を入れる
 syntax on "シンタクス
-
 
 "========
 "検索
@@ -102,9 +101,9 @@ imap ( ()<LEFT>
 " その他
 " ========
 set showmatch "閉じカッコ入力時、対応する過去に一瞬移動
-nmap <C-l> <Plug>AirlineSelectPrevTab "タブ移動のショートカット
-nmap <C-h> <Plug>AirlineSelectNextTab "タブ移動のショートカット
-colorscheme iceberg
+nmap <C-h> <Plug>AirlineSelectPrevTab "タブ移動のショートカット
+nmap <C-l> <Plug>AirlineSelectNextTab "タブ移動のショートカット
+colorscheme industry
 set clipboard+=unnamed "クリップボード使う
 set ttimeoutlen=50 "モード切り替えを早く?
 set showcmd "ステータスラインにコマンドを表示
@@ -160,7 +159,7 @@ let g:airline#extensions#tabline#buffer_idx_format = {
     \ '8': '8 ',
     \ '9': '9 '
     \} "tabの番号を全角にする
- set laststatus=2
+set laststatus=2
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1 ":e ファイル名で新タブで開く
 let g:airline#extensions#wordcount#enabled=0
@@ -175,5 +174,5 @@ let g:webdevicons_enable_nerdtree = 1 "NERDTreeでON or OFF
 let g:webdevicons_conceal_nerdtree_brackets = 1
 
 "bpearson/vim-phpcs
-let Vimphpcs_Standard='PSR2 app'
+" let Vimphpcs_Standard='RPS4 app'
 
