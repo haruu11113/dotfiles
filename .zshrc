@@ -1,6 +1,9 @@
 # =======
 # zplugin
 # =======
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+
 if [ -z "$ZPLG_HOME" ]; then
     ZPLG_HOME="${ZHOMEDIR:-$HOME}/zplugin"
 fi
@@ -48,6 +51,11 @@ fi
 # =======
 # PATH
 # =======
+# git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # pyenvさんに~/.pyenvではなく、/usr/loca/var/pyenvを使うようにお願いする
 # export PYENV_ROOT=/usr/local/var/pyenv
 
@@ -76,3 +84,9 @@ zinit light zsh-users/zsh-autosuggestions #入力途中に候補をうっすら�
 zinit ice wait'2'
 zinit light zsh-users/zsh-history-substring-search #ヒストリの補完を強化する
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/harukaneko/google-cloud-sdk/path.zsh.inc' ]; then . '/home/harukaneko/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/harukaneko/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/harukaneko/google-cloud-sdk/completion.zsh.inc'; fi
