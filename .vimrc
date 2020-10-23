@@ -101,15 +101,9 @@ imap ( ()<LEFT>
 " その他
 " ========
 set showmatch "閉じカッコ入力時、対応する過去に一瞬移動
-<<<<<<< HEAD
-nmap <C-h> <Plug>AirlineSelectPrevTab "タブ移動のショートカット
-nmap <C-l> <Plug>AirlineSelectNextTab "タブ移動のショートカット
-colorscheme industry
-=======
 nmap <C-l> <Plug>AirlineSelectPrevTab "タブ移動のショートカット
 nmap <C-h> <Plug>AirlineSelectNextTab "タブ移動のショートカット
 colorscheme pablo
->>>>>>> 8bd3339c8ee4fc650d22457f313421a7bfb89df6
 set clipboard+=unnamed "クリップボード使う
 set ttimeoutlen=50 "モード切り替えを早く?
 set showcmd "ステータスラインにコマンドを表示
