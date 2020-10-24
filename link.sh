@@ -8,11 +8,11 @@ for f in ${dotfiles[@]}; do
         echo "./old/に${f}を移動"
         mv ~/${f} ./old/
         echo ""~" に${f}のリンクを作成"
-        ln -s ./${f} ~/${f}
+        ln -s ${PWD}/${f} ~/${f}
         echo "======"
     else
         echo ""~" に${f}のリンクを作成"
-        ln -s ./${f} ~/${f}
+        ln -s ${PWD}/${f} ~/${f}
         echo "====="
     fi
 done
