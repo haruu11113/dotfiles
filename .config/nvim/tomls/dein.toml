@@ -1,0 +1,99 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+    map <C-n> :NERDTreeToggle<CR>
+    let NERDTreeShowHidden=1
+'''
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+    let g:indent_guides_enable_on_vim_startup=1 "デフォルトでインデント出す
+    let g:indent_guides_start_level=2 "ガイドをスタートするインデント
+    let g:indent_guides_guide_size=1 " ガイドの幅
+    let g:indent_guides_auto_colors = 0
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=gray "奇数インデントのカラー
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray "偶数インデントのカラー
+'''
+[[plugins]]
+repo = 'reireias/vim-cheatsheet'
+hook_add = '''
+    let g:cheatsheet#cheat_file = '$HOME/.cheetsheet'
+'''
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+    let g:airline#extensions#tabline#enabled=1 "タブを有効
+    let g:airline#extensions#tabline#buffer_idx_mode=1 "タブ番号の表示
+    let g:airline#extensions#tabline#buffer_idx_format = {
+        \ '0': '0 ',
+        \ '1': '1 ',
+        \ '2': '2 ',
+        \ '3': '3 ',
+        \ '4': '4 ',
+        \ '5': '5 ',
+        \ '6': '6 ',
+        \ '7': '7 ',
+        \ '8': '8 ',
+        \ '9': '9 '
+        \} "tabの番号を全角にする
+    set laststatus=2
+    let g:airline#extensions#branch#enabled = 1
+    let g:airline#extensions#tabline#enabled = 1 ":e ファイル名で新タブで開く
+    let g:airline#extensions#wordcount#enabled=0
+    let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['wordcount', 'error', 'warning', 'x', 'y', 'z']]
+    let g:airline_section_c = '%t'
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+hook_add = '''
+    let g:airline_powerline_fonts = 1 "if I use vim-airline
+    let g:webdevicons_enable_nerdtree = 1 "NERDTreeでON or OFF
+    let g:webdevicons_conceal_nerdtree_brackets = 1
+'''
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+# fzf
+[[plugins]]
+repo = 'junegunn/fzf'
+hook_post_update = './install --all'
+merged = 0
+
+# fzf.vim
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+hook_add = '''
+    command! -bang -nargs=* Rg
+    \ call fzf#vim#grep(
+    \ 'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
+    \ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+    \ : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+    \ <bang>0)
+    nnoremap <C-g> :Rg<Space>
+    nnoremap <C-p> :GFiles<CR>
+    nnoremap <C-h> :History<CR>
+'''

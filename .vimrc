@@ -1,47 +1,41 @@
-"=======
-"dein
-"=======
-if $compatible
-    set nocompatible
+""=======
+""dein
+""=======
+if &compatible
+  set nocompatible
 endif
 
-set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
+" プラグインがインストールされるディレクトリ
+let s:dein_dir = expand('~/.vim/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-if dein#load_state('$HOME/.vim/dein')
-    call dein#begin('$HOME/.vim/dein')
-    call dein#add('$HOME/.vim/dein/repos/github.com/Shougo/dein.vim')
-    " 追加したいプラグインを入れてい
-    " call dein#add('raphamorim/lucario') "colorテーマlucario
-    call dein#add('cocopon/iceberg.vim') "colorテーマiceberg
-    " call dein#add('jdkanani/vim-material-theme') "colorテーマmaterial-theme
-    call dein#add('iamcco/markdown-preview.vim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'], 'build': 'cd app & yarn install' }) "markdown
-    call dein#add('ervandew/supertab') "tab補完pythonにも使えるぽ
-    call dein#add('scrooloose/nerdtree')
-    call dein#add('nathanaelkane/vim-indent-guides') "インデントを色つけ
-    call dein#add('bronson/vim-trailing-whitespace') "いらないスペースをハイライト
-    call dein#add('reireias/vim-cheatsheet')
-    call dein#add('leafgarland/typescript-vim')
-    call dein#add('tpope/vim-fugitive') "gitのコマンド:Gstatusなど
-    call dein#add('airblade/vim-gitgutter') "gitのdiff
-    call dein#add('tpope/vim-commentary') "範囲コメントアウト
-    " call dein#add('majutsushi/tagbar') ":tagbarで関数一覧が見れる
-    " call dein#add('bpearson/vim-phpcs') ":CodeSniffでphpcsが走る
-    "下のバーの装飾
-    call dein#add('vim-airline/vim-airline')
-    call dein#add('vim-airline/vim-airline-themes')
-    call dein#add('ryanoasis/vim-devicons')
-    call dein#end()
-    call dein#save_state()
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
-filetype plugin indent on
-syntax enable
 
-" If you want to install not installed plugins on startup.
+" tomlセット
+let s:toml_dir=expand('~/.vim/dein/tomls/')
+let s:toml=s:toml_dir . 'dein.toml'
+let s:toml_lazy=s:toml_dir . 'dein_lazy.toml'
+
+" プラグインのロード
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+  call dein#load_toml(s:toml)
+  call dein#load_toml(s:toml_lazy, {'lazy': 1})
+  call dein#end()
+  call dein#save_state()
+endif
+
+" インストールしていないプラグインがあればインストールを実行
 if dein#check_install()
-    call dein#install()
+  call dein#install()
 endif
 
-
+" ------------------------------------------------------------
 
 "========
 "view
@@ -118,10 +112,6 @@ set encoding=utf8
 "jdkanani/vim-material-theme
 
 "ervandew/supertab
-"
-"scrooloose/nerdtree
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
 
 " nathanaelkane/vim-indent-guides'
 " how to check colors
@@ -170,8 +160,6 @@ let g:airline_section_c = '%t'
 "
 "ryanoasis/vim-devicons
 let g:airline_powerline_fonts = 1 "if I use vim-airline
-let g:webdevicons_enable_nerdtree = 1 "NERDTreeでON or OFF
-let g:webdevicons_conceal_nerdtree_brackets = 1
 
 "bpearson/vim-phpcs
 " let Vimphpcs_Standard='PSR2 app'

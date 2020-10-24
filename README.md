@@ -36,6 +36,16 @@ brew install neovim
 .vimrcの9行目のif文下に```call dein#add('リポジトリ')```て感じで書く
 
 
+
+## about neovim
+
+```
+$HOME/.vim/dein/
+$HOME/.config/nvim/init.vim
+$HOMW/.config/nvim/tomls/dein.vim
+$HOMW/.config/nvim/tomls/dein_lazy.vim
+```
+
 ## 参考にした
 ~~- vundleの設定について(使ってない20200922)~~  
 ~~Http://holypp.hatenablog.com/entry/20110515/1305443997~~  

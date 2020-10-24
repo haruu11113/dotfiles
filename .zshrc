@@ -48,6 +48,7 @@ if [ type trash-put &> /dev/null ]; then
     alias rm=trash-put
 fi
 
+alias vim="nvim"
 # =======
 # PATH
 # =======
@@ -72,6 +73,11 @@ if command -v pyenv 1>/dev/null 2>&1; then;  eval "$(pyenv init -)"; fi
 #eset ttimeoutlen=50xport JAVA_HOME=`/usr/libexec/java_home -v "11"`
 #PATH=${JAVA_HOME}/bin:${PATH}
 
+# Settings for fzf
+export PATH="$PATH:$HOME/.fzf/bin"
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_DEFAULT_OPTS='--height 30% --border'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # =======
 # plugin

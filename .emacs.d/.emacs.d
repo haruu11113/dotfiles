@@ -1,0 +1,1 @@
+/Users/harukaneko/work/haruu11113/dotfiles/.emacs.d
