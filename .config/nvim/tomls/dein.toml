@@ -97,3 +97,9 @@ hook_add = '''
     nnoremap <C-p> :GFiles<CR>
     nnoremap <C-h> :History<CR>
 '''
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+on_i = 1
+merged = '0'

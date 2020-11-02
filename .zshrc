@@ -93,6 +93,5 @@ zinit light zsh-users/zsh-history-substring-search #ヒストリの補完を強�
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/harukaneko/google-cloud-sdk/path.zsh.inc' ]; then . '/home/harukaneko/google-cloud-sdk/path.zsh.inc'; fi
-
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/harukaneko/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/harukaneko/google-cloud-sdk/completion.zsh.inc'; fi

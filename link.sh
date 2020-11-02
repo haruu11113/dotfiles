@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dotfiles=( ".tmux.conf" ".zshrc" ".emacs.d" "ide" ".cheetsheet" ".config/nvim/init.vim" ".config/nvim/tomls/dein.toml" ".config/nvim/tomls/dein_lazy.toml")
+dotfiles=( ".tmux.conf" ".zshrc" ".emacs.d" "ide" ".cheetsheet" ".config/nvim/init.vim" ".config/nvim/coc-settings.json" ".config/nvim/tomls/dein.toml" ".config/nvim/tomls/dein_lazy.toml")
 for f in ${dotfiles[@]}; do
     echo ${f}
     echo "リンク作成を開始します"
@@ -17,7 +17,4 @@ for f in ${dotfiles[@]}; do
     fi
 done
 
-echo ""~/.config/nvim" に.vimrcのリンクを作成"
-ln -s ${PWD}/.vimrc ~/.config/nvim/
-echo "======"
 
