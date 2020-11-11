@@ -63,9 +63,15 @@ npm install -g cz-conventional-changelog-ja
     stat = status
     com = commit -m
     open = "!hub browse"
+    df = "!git hist | peco | awk '{print $2}' | xargs -I {} git diff {}^ {}"
+    hist = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all
 ```
 
-便利コマンド
+install peco
+brew tap peco/peco
+brew install peco
+
+## 便利コマンド
 /github/hub hub
 
 https://dev.classmethod.jp/articles/commitizen/ commitizen
