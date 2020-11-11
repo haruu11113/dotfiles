@@ -54,6 +54,25 @@ $HOMW/.config/nvim/tomls/dein_lazy.vim
 npm install -g commitizen
 npm install -g cz-conventional-changelog-ja
 ```
+
+## .gitconfig
+```
+[alias]
+    hist = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all
+    llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
+    stat = status
+    com = commit -m
+    open = "!hub browse"
+```
+
+便利コマンド
+/github/hub hub
+
+https://dev.classmethod.jp/articles/commitizen/ commitizen
+
+npm install -g commitizen
+npm install -g cz-conventional-changelog-ja
+
 ## 参考にした
 ~~- vundleの設定について(使ってない20200922)~~  
 k~Http://holypp.hatenablog.com/entry/20110515/1305443997~~  
