@@ -46,9 +46,11 @@ $HOMW/.config/nvim/tomls/dein.vim
 $HOMW/.config/nvim/tomls/dein_lazy.vim
 ```
 
+## 便利コマンド
+- /github/hub ```hub```
 ## 参考にした
 ~~- vundleの設定について(使ってない20200922)~~  
-~~Http://holypp.hatenablog.com/entry/20110515/1305443997~~  
+k~Http://holypp.hatenablog.com/entry/20110515/1305443997~~  
 
 - dein.vimの設定について
 https://ashnoa.hatenablog.com/entry/2019/10/16/230202
