@@ -72,6 +72,7 @@ brew tap peco/peco
 brew install peco
 
 ## 便利コマンド
+```
 /github/hub hub
 
 https://dev.classmethod.jp/articles/commitizen/ commitizen
