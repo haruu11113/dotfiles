@@ -48,6 +48,12 @@ $HOMW/.config/nvim/tomls/dein_lazy.vim
 
 ## 便利コマンド
 - /github/hub ```hub```
+
+- https://dev.classmethod.jp/articles/commitizen/ ```commitizen```
+```
+npm install -g commitizen
+npm install -g cz-conventional-changelog-ja
+```
 ## 参考にした
 ~~- vundleの設定について(使ってない20200922)~~  
 k~Http://holypp.hatenablog.com/entry/20110515/1305443997~~  
