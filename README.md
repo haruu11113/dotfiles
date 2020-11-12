@@ -92,6 +92,9 @@ npm install -g cz-conventional-changelog-ja
 - ```peco```
 brew install peco
 
+- ```tig```
+brew install tig
+
 
 ## 参考にした
 - dein.vimの設定について
