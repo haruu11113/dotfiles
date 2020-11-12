@@ -54,7 +54,15 @@ $HOMW/.config/nvim/tomls/dein_lazy.vim
 npm install -g commitizen
 npm install -g cz-conventional-changelog-ja
 ```
+## about nodejs
+https://github.com/nvm-sh/nvm
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+nvm install --lts
+nvm use --lts
+```
 
+nodejs lts(v14.15.0)がインストールされる
 ## .gitconfig
 ```
 [alias]
