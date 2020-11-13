@@ -55,26 +55,10 @@ alias vim="nvim"
 # =======
 # PATH
 # =======
-# git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-
-# pyenvさんに~/.pyenvではなく、/usr/loca/var/pyenvを使うようにお願いする
-# export PYENV_ROOT=/usr/local/var/pyenv
-
-# Ubuntuのpyenv用の設定
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then;  eval "$(pyenv init -)"; fi
-
-# if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-# export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$PATH"
-
-#export PATH=$HOME/.nodebrew/current/bin:$PATH
-#export NODEBREW_ROOT=/usr/local/var/nodebrew
-#eset ttimeoutlen=50xport JAVA_HOME=`/usr/libexec/java_home -v "11"`
-#PATH=${JAVA_HOME}/bin:${PATH}
 
 # Settings for fzf
 export PATH="$PATH:$HOME/.fzf/bin"
@@ -99,7 +83,12 @@ zinit light zsh-users/zsh-history-substring-search #ヒストリの補完を強�
 if [ -f '/home/harukaneko/google-cloud-sdk/path.zsh.inc' ]; then . '/home/harukaneko/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/home/harukaneko/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/harukaneko/google-cloud-sdk/completion.zsh.inc'; fi
 
+# nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
+
+XDG_CONFIG_HOME=$HOME/.config
+XDG_CACHE_HOME=$HOME/.cache
+XDG_DATA_HOME=$HOME/.local/share
