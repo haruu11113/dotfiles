@@ -52,24 +52,9 @@ pyenv global 3.6.0
 ```
 
 
-## 便利コマンド
-### hub
-```hub```
-https://github.com/github/hub 
-
-
-### coomitzen
-```cz```
-https://dev.classmethod.jp/articles/commitizen/
-```
-npm install -g commitizen
-npm install -g cz-conventional-changelog-ja
-```
-
-
 ## nodejs
-```nvm```
-```npm```
+```nvm```, ```npm```
+
 https://github.com/nvm-sh/nvm
 
 ※nodejs lts(v14.15.0)がインストールされる
@@ -79,18 +64,36 @@ nvm install --lts
 nvm use --lts
 ```
 
+## Google Drive
+https://neos21.hatenablog.com/entry/2020/03/31/080000
+```
+$ sudo add-apt-repository ppa:alessandro-strada/ppa
+$ sudo apt-get update
+$ sudo apt-get install google-drive-ocamlfuse
 
+$ google-drive-ocamlfuse
+#ブラウザが開くのでサインインし認証する
+Access token retrieved correctly.
+#しばらく待ち、このメッセージが出てプロンプトに戻ったら OK
+
+#同期用ディレクトリを作成し同期を開始する
+mkdir ~/GoogleDrive
+google-drive-ocamlfuse ~/GoogleDrive
+```
 ## 便利コマンド
 - ```hub```
 https://github.com/github/hub
 
 - ```cz```
-https://dev.classmethod.jp/articles/commitizen/
-npm install -g commitizen
-npm install -g cz-conventional-changelog-ja
+https://dev.classmethod.jp/articles/commitizen/  
+npm install -g commitizen  
+npm install -g cz-conventional-changelog-ja  
 
 - ```peco```
 brew install peco
+
+- ```tig```
+brew install tig
 
 
 ## 参考にした
