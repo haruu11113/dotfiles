@@ -52,24 +52,9 @@ pyenv global 3.6.0
 ```
 
 
-## 便利コマンド
-### hub
-```hub```
-https://github.com/github/hub 
-
-
-### coomitzen
-```cz```
-https://dev.classmethod.jp/articles/commitizen/
-```
-npm install -g commitizen
-npm install -g cz-conventional-changelog-ja
-```
-
-
 ## nodejs
-```nvm```
-```npm```
+```nvm```, ```npm```
+
 https://github.com/nvm-sh/nvm
 
 ※nodejs lts(v14.15.0)がインストールされる
@@ -85,9 +70,9 @@ nvm use --lts
 https://github.com/github/hub
 
 - ```cz```
-https://dev.classmethod.jp/articles/commitizen/
-npm install -g commitizen
-npm install -g cz-conventional-changelog-ja
+https://dev.classmethod.jp/articles/commitizen/  
+npm install -g commitizen  
+npm install -g cz-conventional-changelog-ja  
 
 - ```peco```
 brew install peco
