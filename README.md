@@ -64,7 +64,22 @@ nvm install --lts
 nvm use --lts
 ```
 
+## Google Drive
+https://neos21.hatenablog.com/entry/2020/03/31/080000
+```
+$ sudo add-apt-repository ppa:alessandro-strada/ppa
+$ sudo apt-get update
+$ sudo apt-get install google-drive-ocamlfuse
 
+$ google-drive-ocamlfuse
+#ブラウザが開くのでサインインし認証する
+Access token retrieved correctly.
+#しばらく待ち、このメッセージが出てプロンプトに戻ったら OK
+
+#同期用ディレクトリを作成し同期を開始する
+mkdir ~/GoogleDrive
+google-drive-ocamlfuse ~/GoogleDrive
+```
 ## 便利コマンド
 - ```hub```
 https://github.com/github/hub
