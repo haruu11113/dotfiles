@@ -46,6 +46,7 @@ alias t="tmux"
 alias ide="sh ~/ide"
 alias ide2="sh ~/ide2"
 alias vbs="VBoxManage startvm --type headless"
+alias open="xdg-open"
 #rmをゴミ箱行きに変更
 if [ type trash-put &> /dev/null ]; then
     alias rm=trash-put
