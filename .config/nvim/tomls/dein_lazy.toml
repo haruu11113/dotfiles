@@ -10,3 +10,27 @@ hook_add = '''
   let g:closetag_shortcut='>'
 '''
 
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+on_ft = ['python']
+
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+on_ft = ['python']
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+on_ft = ['python']
+depends = ['async.vim', 'vim-virtualenv']
+hook_source = '''
+source ~/.config/nvim/plugins/vim-lsp.rc.vim
+'''
+
+[[plugins]]
+repo = 'ryanolsonx/vim-lsp-python'
+on_ft = ['python']
+depends = ['vim-lsp']
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+on_ft = ['python']
