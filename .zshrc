@@ -7,7 +7,6 @@ autoload -Uz _zinit
 if [ -z "$ZPLG_HOME" ]; then
     ZPLG_HOME="${ZHOMEDIR:-$HOME}/zplugin"
 fi
-
 if ! test -d "$ZPLG_HOME"; then
     mkdir "$ZPLG_HOME"
     chmod g-rwX "$ZPLG_HOME"
@@ -93,3 +92,12 @@ export NVM_DIR="$HOME/.nvm"
 XDG_CONFIG_HOME=$HOME/.config
 XDG_CACHE_HOME=$HOME/.cache
 XDG_DATA_HOME=$HOME/.local/share
+
+# for demo on sozolab
+export CC=/usr/local/bin/gcc
+export CXX=/usr/local/bin/g++
+export LDFLAGS="-L/usr/local/opt/libressl/lib"
+export CPPFLAGS="-I/usr/local/opt/libressl/include"
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/libressl/lib/
+
+export DOCKER_CONTENT_TRUST=1
