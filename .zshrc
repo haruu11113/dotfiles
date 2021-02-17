@@ -45,7 +45,7 @@ alias t="tmux"
 alias ide="sh ~/ide"
 alias ide2="sh ~/ide2"
 alias vbs="VBoxManage startvm --type headless"
-alias open="xdg-open"
+# alias open="xdg-open"
 #rmをゴミ箱行きに変更
 if [ type trash-put &> /dev/null ]; then
     alias rm=trash-put
@@ -94,7 +94,7 @@ XDG_CACHE_HOME=$HOME/.cache
 XDG_DATA_HOME=$HOME/.local/share
 
 # for demo on sozolab
-export CC=/usr/local/bin/gcc
+# export CC=/usr/local/bin/gcc
 export CXX=/usr/local/bin/g++
 export LDFLAGS="-L/usr/local/opt/libressl/lib"
 export CPPFLAGS="-I/usr/local/opt/libressl/include"
