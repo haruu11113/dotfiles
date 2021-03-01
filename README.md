@@ -51,6 +51,12 @@ pyenv install 3.6.0
 pyenv global 3.6.0
 ```
 
+## coc
+use python linter
+```
+pip install python-language-server pynvim
+:CocInstall coc-python
+```
 
 ## nodejs
 ```nvm```, ```npm```
