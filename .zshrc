@@ -78,10 +78,7 @@ zinit ice wait'2'
 zinit light zsh-users/zsh-history-substring-search #ヒストリの補完を強化する
 
 
-# The next line updates PATH for the Google Cloud SDK.
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/harukaneko/google-cloud-sdk/path.zsh.inc' ]; then . '/home/harukaneko/google-cloud-sdk/path.zsh.inc'; fi
-if [ -f '/home/harukaneko/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/harukaneko/google-cloud-sdk/completion.zsh.inc'; fi
+# The next line updates PATH for the Google Cloud SDK.if [ -f '/home/harukaneko/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/harukaneko/google-cloud-sdk/completion.zsh.inc'; fi
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -101,3 +98,18 @@ export CPPFLAGS="-I/usr/local/opt/libressl/include"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/libressl/lib/
 
 export DOCKER_CONTENT_TRUST=1
+
+
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+
+# The next line updates PATH for the Google Cloud SDK.
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/harukaneko/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/harukaneko/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc'; fi
