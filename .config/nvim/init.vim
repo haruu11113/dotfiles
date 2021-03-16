@@ -79,7 +79,8 @@ imap ( ()<LEFT>
 set showmatch "閉じカッコ入力時、対応する過去に一瞬移動
 nmap <C-h> <Plug>AirlineSelectPrevTab "タブ移動のショートカット
 nmap <C-l> <Plug>AirlineSelectNextTab "タブ移動のショートカット
-colorscheme pablo
+" colorscheme pablo
+colorscheme jellybeans
 set clipboard+=unnamed "クリップボード使う
 set ttimeoutlen=50 "モード切り替えを早く?
 set showcmd "ステータスラインにコマンドを表示

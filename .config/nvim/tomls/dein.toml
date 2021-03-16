@@ -5,6 +5,9 @@ repo = 'Shougo/dein.vim'
 repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
+repo = 'nanotech/jellybeans.vim'
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
     map <C-n> :NERDTreeToggle<CR>
