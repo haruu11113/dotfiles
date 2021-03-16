@@ -44,6 +44,7 @@ alias g="git"
 alias t="tmux"
 alias ide="sh ~/ide"
 alias ide2="sh ~/ide2"
+alias ide3="sh ~/ide3"
 alias vbs="VBoxManage startvm --type headless"
 # alias open="xdg-open"
 #rmをゴミ箱行きに変更
