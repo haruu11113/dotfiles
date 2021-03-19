@@ -17,3 +17,12 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+" Extensions
+let g:coc_global_extensions = [
+  \ 'coc-json',
+  \ 'coc-tsserver',
+  \ 'coc-prettier',
+  \ 'coc-eslint',
+  \ 'coc-python',
+  \ ]
