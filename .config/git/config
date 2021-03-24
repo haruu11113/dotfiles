@@ -1,6 +1,6 @@
 [user]
-    name = haru11113
-    email = kanekoharu1a@gmail.com
+	name = haru11113
+	email = haru11113@gmail.com
 [core]
     excludesfile = /Users/harukaneko/.config/git/ignore
     quotepath = false
