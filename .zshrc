@@ -24,8 +24,8 @@ autoload -Uz _zplugin
 # =======
 setopt extended_history #ヒストリに実行時間も保存
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=50000
+SAVEHIST=50000
 export LSCOLORS=gxHxcxdxbxegedabagacad #lsの時に色をつける
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' #大小文字を区別しない
 # PROMPT=" %F{green}%n %f %c $ " #プロンプト
