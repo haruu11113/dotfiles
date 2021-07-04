@@ -46,6 +46,7 @@ alias t="tmux"
 alias ide="sh ~/ide"
 alias ide2="sh ~/ide2"
 alias ide3="sh ~/ide3"
+alias fd="sh ~/fd"
 alias vbs="VBoxManage startvm --type headless"
 # alias open="xdg-open"
 #rmをゴミ箱行きに変更
@@ -54,6 +55,7 @@ if [ type trash-put &> /dev/null ]; then
 fi
 
 alias vim="nvim"
+
 # =======
 # PATH
 # =======
@@ -62,11 +64,42 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 if command -v pyenv 1>/dev/null 2>&1; then;  eval "$(pyenv init -)"; fi
 
+# ========
 # Settings for fzf
+# ========
 export PATH="$PATH:$HOME/.fzf/bin"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
-export FZF_DEFAULT_OPTS='--height 30% --border'
+export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --inline-info --preview 'head -100 {}'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias -g B='`git branch --all | grep -v HEAD | fzf -m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
+
+cd-fzf-find() {
+    local DIR=$(find ./ -path '*/\.*' -name .git -prune -o -type d -print 2> /dev/null | fzf +m)
+    if [ -n "$DIR" ]; then
+        cd $DIR
+    fi
+}
+alias cdf=cd-fzf-find
+
+vim-fzf-find() {
+    local FILE=$(find ./ -path '*/\.*' -name .git -prune -o -type f -print 2> /dev/null | fzf +m)
+    if [ -n "$FILE" ]; then
+        ${EDITOR:-vim} $FILE
+    fi
+}
+alias vimf=vim-fzf-find
+
+function buffer-fzf-history() {
+    local HISTORY=$(history -n -r 1 | fzf +m)
+    BUFFER=$HISTORY
+    if [ -n "$HISTORY" ]; then
+        CURSOR=$#BUFFER
+    else
+        zle accept-line
+    fi
+}
+zle -N buffer-fzf-history
+bindkey '^R' buffer-fzf-history
 
 # =======
 # plugin
@@ -94,10 +127,10 @@ XDG_DATA_HOME=$HOME/.local/share
 
 # for demo on sozolab
 # export CC=/usr/local/bin/gcc
-export CXX=/usr/local/bin/g++
-export LDFLAGS="-L/usr/local/opt/libressl/lib"
-export CPPFLAGS="-I/usr/local/opt/libressl/include"
-export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/libressl/lib/
+# export CXX=/usr/local/bin/g++
+# export LDFLAGS="-L/usr/local/opt/libressl/lib"
+# export CPPFLAGS="-I/usr/local/opt/libressl/include"
+# export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/libressl/lib/
 
 export DOCKER_CONTENT_TRUST=1
 
@@ -115,3 +148,10 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/harukaneko/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/harukaneko/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+# export PATH="/usr/local/opt/libxml2/bin:$PATH"
+# ruby, rbenv
+# [[ -d ~/.rbenv  ]] && \
+#   export PATH=${HOME}/.rbenv/bin:${PATH} && \
+#   eval "$(rbenv init -)"

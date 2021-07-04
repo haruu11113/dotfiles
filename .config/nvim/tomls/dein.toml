@@ -103,12 +103,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
-on_ft = ['python']
-merged=0
-rev="release"
 hook_source = '''
 source ~/.config/nvim/plugins/coc.rc.vim
 '''
 
-[[plugins]]
-repo = 'cohama/agit.vim'
