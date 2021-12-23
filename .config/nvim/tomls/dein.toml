@@ -107,3 +107,8 @@ hook_source = '''
 source ~/.config/nvim/plugins/coc.rc.vim
 '''
 
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'

@@ -144,10 +144,7 @@ eval "$(pyenv virtualenv-init -)"
 export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 
-# The next line updates PATH for the Google Cloud SDK.
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/harukaneko/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/harukaneko/google-cloud-sdk/path.zsh.inc'; fi
-if [ -f '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc'; fi
+# The next line updates PATH for the Google Cloud SDK.if [ -f '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc'; fi
 
 
 # export PATH="/usr/local/opt/libxml2/bin:$PATH"
@@ -155,3 +152,9 @@ if [ -f '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc' ]; then . '/User
 # [[ -d ~/.rbenv  ]] && \
 #   export PATH=${HOME}/.rbenv/bin:${PATH} && \
 #   eval "$(rbenv init -)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/harukaneko/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/harukaneko/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc'; fi
