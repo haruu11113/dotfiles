@@ -165,4 +165,3 @@ let g:airline_powerline_fonts = 1 "if I use vim-airline
 " let Vimphpcs_Standard='PSR2 app'
 
 set backspace=indent,eol,start
-

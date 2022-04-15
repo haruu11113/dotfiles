@@ -13,6 +13,7 @@ hook_add = '''
     map <C-n> :NERDTreeToggle<CR>
     let NERDTreeShowHidden=1
 '''
+
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 hook_add = '''
@@ -28,6 +29,7 @@ repo = 'reireias/vim-cheatsheet'
 hook_add = '''
     let g:cheatsheet#cheat_file = '$HOME/.cheetsheet'
 '''
+
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
 
@@ -79,13 +81,11 @@ hook_add = '''
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
 
-# fzf
 [[plugins]]
 repo = 'junegunn/fzf'
 hook_post_update = './install --all'
 merged = 0
 
-# fzf.vim
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'

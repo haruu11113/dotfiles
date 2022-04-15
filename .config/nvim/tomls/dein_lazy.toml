@@ -13,4 +13,3 @@ hook_add = '''
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
 on_ft = ['python']
-
