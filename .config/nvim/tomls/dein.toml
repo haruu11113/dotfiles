@@ -8,13 +8,6 @@ repo = 'cocopon/iceberg.vim'
 repo = 'nanotech/jellybeans.vim'
 
 [[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add = '''
-    map <C-n> :NERDTreeToggle<CR>
-    let NERDTreeShowHidden=1
-'''
-
-[[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 hook_add = '''
     let g:indent_guides_enable_on_vim_startup=1 "デフォルトでインデント出す
@@ -24,6 +17,7 @@ hook_add = '''
     autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=gray "奇数インデントのカラー
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray "偶数インデントのカラー
 '''
+
 [[plugins]]
 repo = 'reireias/vim-cheatsheet'
 hook_add = '''
@@ -41,6 +35,12 @@ repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'tpope/vim-commentary'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
@@ -68,7 +68,11 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'vim-airline/vim-airline-themes'
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+    map <C-n> :NERDTreeToggle<CR>
+    let NERDTreeShowHidden=1
+'''
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
@@ -77,9 +81,6 @@ hook_add = '''
     let g:webdevicons_enable_nerdtree = 1 "NERDTreeでON or OFF
     let g:webdevicons_conceal_nerdtree_brackets = 1
 '''
-
-[[plugins]]
-repo = 'easymotion/vim-easymotion'
 
 [[plugins]]
 repo = 'junegunn/fzf'
