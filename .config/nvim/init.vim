@@ -1,3 +1,5 @@
+set shell="/usr/bin/zsh"
+
 if &compatible
     set nocompatible
 endif
@@ -17,10 +19,7 @@ endif
 filetype plugin indent on
 syntax enable
 
-
-"========
-"view
-"========
+"======== view ========
 set number "行番号を表示する
 set title "編集中のファイル名を表示
 set showmatch "括弧入力時の対応する括弧を表示
@@ -31,12 +30,10 @@ set softtabstop=4 "連続した空白に対してタブキーやバックスペ�
 set cursorline "カーソルがある行を強調
 set list listchars=tab:\▸\-
 set expandtab "tabの代わりに空白を入れる
+set mouse=a "マウスでの移動
 syntax on "シンタクス
 
-
-"========
-"検索
-"========
+"======== 検索 ========
 set ignorecase "大文字/小文字の区別なく検索する
 set smartcase "検索文字列に大文字が含まれている場合は区別して検索する
 set wrapscan
@@ -44,9 +41,8 @@ set hlsearch "検索にマッチした部分をハイライト
 set incsearch "検索文字を入力中もハイライトされる
 nnoremap <F3> :noh<CR> "F3を押すとハイライトが消える
 
-"========
-"files
-"========
+"======== files ========
+
 set nobackup
 set noswapfile
 set autoread
@@ -54,9 +50,7 @@ set hidden
 set showcmd "コマンドを最下部に表示
 
 
-"========
-"補完
-"========
+"======== 補完 ========
 "コマンドをlist表示かつTabで次の候補を選択
 set wildmenu
 ""最後のカーソル位置を復元する
@@ -73,14 +67,14 @@ imap [ []<LEFT>
 imap ( ()<LEFT>
 
 
-" ========
-" その他
-" ========
+"======== その他 ========
 set showmatch "閉じカッコ入力時、対応する過去に一瞬移動
 nmap <C-h> <Plug>AirlineSelectPrevTab "タブ移動のショートカット
 nmap <C-l> <Plug>AirlineSelectNextTab "タブ移動のショートカット
-" colorscheme pablo
-colorscheme jellybeans
+
+nmap <C-n> :NERDTreeToggle<CR>
+
+colorscheme desert
 set clipboard+=unnamed "クリップボード使う
 set ttimeoutlen=50 "モード切り替えを早く?
 set showcmd "ステータスラインにコマンドを表示

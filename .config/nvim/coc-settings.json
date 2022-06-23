@@ -1,43 +1,9 @@
 {
-    "suggest.noselect": true,
-    "suggest.preferCompleteThanJumpPlaceholder": true,
-    "languageserver": {
-        "clangd": {
-            "command": "clangd",
-            "args": ["--background-index"],
-            "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-            "filetypes": ["c", "cpp", "objc", "objcpp"]
-        },
-        "dockerfile": {
-            "command": "docker-langserver",
-            "filetypes": ["dockerfile"],
-            "args": ["--stdio"]
-        },
-        "haskell": {
-            "command": "hie-wrapper",
-            "rootPatterns": [".stack.yaml", "cabal.config", "package.yaml"],
-            "filetypes": ["hs", "lhs", "haskell"],
-            "initializationOptions": {
-                "languageServerHaskell": {
-                    "hlintOn": true
-                }
-            }
-        }
-    },
-    "python.jediEnabled": false,
-    "coc.preferences.formatonsavefiletypes": ["json", "css", "markdown"],
-    "eslint.autofixonsave": true,
-    "eslint.autofix": true,
-    "tsserver.enablejavascript": false,
-    "languageserver": {
-        "flow": {
-          "command": "flow",
-          "args": ["lsp"],
-          "filetypes": ["javascript", "javascriptreact"],
-          "initializationoptions": {},
-          "requirerootpattern": true,
-          "settings": {},
-          "rootPatterns": [".flowconfig"]
-        }
-    }
+  "diagnostic.enable": false,
+  "python.linting.enabled": false,
+  "python.jediPath": "~/.pyenv/versions/3.6.9/lib/python3.6/site-packages/",
+  "jedi": {
+    "enable": true,
+    "startupMessage": false
+  }
 }

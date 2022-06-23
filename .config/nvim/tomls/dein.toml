@@ -8,12 +8,6 @@ repo = 'cocopon/iceberg.vim'
 repo = 'nanotech/jellybeans.vim'
 
 [[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add = '''
-    map <C-n> :NERDTreeToggle<CR>
-    let NERDTreeShowHidden=1
-'''
-[[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 hook_add = '''
     let g:indent_guides_enable_on_vim_startup=1 "デフォルトでインデント出す
@@ -23,11 +17,13 @@ hook_add = '''
     autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=gray "奇数インデントのカラー
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray "偶数インデントのカラー
 '''
+
 [[plugins]]
 repo = 'reireias/vim-cheatsheet'
 hook_add = '''
     let g:cheatsheet#cheat_file = '$HOME/.cheetsheet'
 '''
+
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
 
@@ -39,6 +35,12 @@ repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'tpope/vim-commentary'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
@@ -66,7 +68,10 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'vim-airline/vim-airline-themes'
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+    let NERDTreeShowHidden=1
+'''
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
@@ -77,15 +82,10 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'easymotion/vim-easymotion'
-
-# fzf
-[[plugins]]
 repo = 'junegunn/fzf'
 hook_post_update = './install --all'
 merged = 0
 
-# fzf.vim
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
@@ -107,3 +107,8 @@ hook_source = '''
 source ~/.config/nvim/plugins/coc.rc.vim
 '''
 
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'

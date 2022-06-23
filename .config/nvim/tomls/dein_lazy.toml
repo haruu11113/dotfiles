@@ -13,21 +13,3 @@ hook_add = '''
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
 on_ft = ['python']
-
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete-lsp.vim'
-on_ft = ['python']
-
-[[plugins]]
-repo = 'prabirshrestha/vim-lsp'
-on_ft = ['python']
-depends = ['async.vim']
-hook_source = '''
-    source ~/.config/nvim/plugins/vim-lsp.rc.vim
-'''
-
-[[plugins]]
-repo = 'ryanolsonx/vim-lsp-python'
-on_ft = ['python']
-depends = ['vim-lsp']
-
