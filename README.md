@@ -24,6 +24,10 @@ cd ~/.vim/dein/
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 ```
 
+```
+delete cach
+call dein#recache_runtimepath()
+```
 
 ### 4. Set Up zsh
 ```
@@ -56,6 +60,7 @@ use python linter
 ```
 pip install python-language-server pynvim
 :CocInstall coc-python
+:call coc#util#install()
 ```
 
 ## nodejs

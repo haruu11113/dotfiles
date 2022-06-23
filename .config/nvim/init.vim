@@ -1,3 +1,5 @@
+set shell="/usr/bin/zsh"
+
 if &compatible
     set nocompatible
 endif
@@ -28,6 +30,7 @@ set softtabstop=4 "連続した空白に対してタブキーやバックスペ�
 set cursorline "カーソルがある行を強調
 set list listchars=tab:\▸\-
 set expandtab "tabの代わりに空白を入れる
+set mouse=a "マウスでの移動
 syntax on "シンタクス
 
 "======== 検索 ========
@@ -68,6 +71,8 @@ imap ( ()<LEFT>
 set showmatch "閉じカッコ入力時、対応する過去に一瞬移動
 nmap <C-h> <Plug>AirlineSelectPrevTab "タブ移動のショートカット
 nmap <C-l> <Plug>AirlineSelectNextTab "タブ移動のショートカット
+
+nmap <C-n> :NERDTreeToggle<CR>
 
 colorscheme desert
 set clipboard+=unnamed "クリップボード使う

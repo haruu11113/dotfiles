@@ -70,7 +70,6 @@ hook_add = '''
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
-    map <C-n> :NERDTreeToggle<CR>
     let NERDTreeShowHidden=1
 '''
 

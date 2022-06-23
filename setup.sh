@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# ".cheetsheet" ".config/nvim/coc-settings.json" ".config/nvim/plugins/vim-lsp.rc.vim"
-dotfiles=( ".tmux.conf" ".zshrc" "ide" "ide2" "ide3" ".config/nvim/init.vim" ".config/nvim/tomls/dein.toml" ".config/nvim/tomls/dein_lazy.toml" ".config/git/config" ".config/git/ignore" ".config/nvim/plugins/coc.rc.vim")
+# ".cheetsheet" ".config/nvim/plugins/vim-lsp.rc.vim"
+dotfiles=( ".tmux.conf" ".zshrc" "ide" "ide2" "ide3" ".vimrc" ".config/nvim/init.vim" ".config/nvim/tomls/dein.toml" ".config/nvim/tomls/dein_lazy.toml" ".config/git/config" ".config/git/ignore" ".config/nvim/plugins/coc.rc.vim" ".skhdrc" ".yabairc" ".config/nvim/coc-settings.json")
 for f in ${dotfiles[@]}; do
     echo ${f}
     echo "リンク作成を開始します"
@@ -17,5 +17,3 @@ for f in ${dotfiles[@]}; do
         echo "====="
     fi
 done
-
-
