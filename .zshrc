@@ -28,7 +28,8 @@ HISTSIZE=50000
 SAVEHIST=50000
 export LSCOLORS=gxHxcxdxbxegedabagacad #lsの時に色をつける
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' #大小文字を区別しない
-PROMPT=" %F{green}pro ( '_') %f %c $ " #プロンプト
+PROMPT=" %F{cyan}lab ( @_@) %f %c $ " #プロンプト
+#PROMPT=" %F{#556779}%n %f %c $ " #プロンプト
 
 #補完
 autoload -U compinit
@@ -132,7 +133,18 @@ export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/harukaneko/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/harukaneko/google-cloud-sdk/path.zsh.inc'; fi
+# if [ -f '/Users/harukaneko/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/harukaneko/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc'; fi
+
+# export PATH="/usr/local/opt/libxml2/bin:$PATH"
+# ruby, rbenv
+# [[ -d ~/.rbenv  ]] && \
+#   export PATH=${HOME}/.rbenv/bin:${PATH} && \
+#   eval "$(rbenv init -)"
+
+export PATH="/usr/local/cuda/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
