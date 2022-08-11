@@ -58,7 +58,7 @@ fi
 # PATH
 # =======
 set shell=/usr/bin/zsh
-
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
@@ -71,8 +71,6 @@ export PATH="$PATH:$HOME/.fzf/bin"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --inline-info --preview 'head -100 {}'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-alias -g B='`git branch --all | grep -v HEAD | fzf -m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
 
 cd-fzf-find() {
     local DIR=$(find ./ -path '*/\.*' -name .git -prune -o -type d -print 2> /dev/null | fzf +m)
@@ -101,6 +99,8 @@ function buffer-fzf-history() {
 }
 zle -N buffer-fzf-history
 bindkey '^R' buffer-fzf-history
+
+alias -g B='`git branch --all | grep -v HEAD | fzf -m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
 
 # =======
 # plugin
