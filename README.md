@@ -75,6 +75,12 @@ nvm install --lts
 nvm use --lts
 ```
 
+
+```
+$ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+$ ~/.fzf/install
+```
+
 ## Google Drive
 https://neos21.hatenablog.com/entry/2020/03/31/080000
 ```
