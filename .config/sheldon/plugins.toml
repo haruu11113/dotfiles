@@ -1,0 +1,35 @@
+shell = "zsh"
+
+
+apply = ["source"] # defer: 非同期読み込み、source: 同期読み込み
+
+
+# 遅延読み込み用
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+#"source .local/share/sheldon/repos/github.com/romkatv/zsh-defer/zsh-defer.plugin.zsh"
+
+# 遅延読み込み用
+[templates]
+defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+
+# ヒストリの補完を強化する
+[plugins.zsh-history-substring-search]
+github = "zsh-users/zsh-history-substring-search"
+apply = ["source"]
+
+# 入力途中に候補をうっすら表示
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+apply = ["source"]
+
+match = [
+    "{{ name }}.plugin.zsh",
+    "{{ name }}.zsh",
+    "{{ name }}.sh",
+    "{{ name }}.zsh-theme",
+    "*.plugin.zsh",
+    "*.zsh",
+    "*.sh",
+    "*.zsh-theme"
+]

@@ -1,5 +1,5 @@
 [user]
-    name = haruu11113
+    name = haruk
     email = haruu11113@gmail.com
 [core]
     excludesfile = /Users/harukaneko/.config/git/ignore
@@ -17,3 +17,6 @@
     df = "!git hist | peco | awk '{print $2}' | xargs -I {} git diff {}^ {}"
     hist = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all
     psuh = push
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
