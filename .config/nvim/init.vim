@@ -79,8 +79,8 @@ set showcmd "ステータスラインにコマンドを表示
 set encoding=utf8
 set backspace=indent,eol,start
 
-# let g:coc_node_path = '~/.nodebrew/current/bin/node'
-let g:coc_node_path = '~/.nvm/versions/node/v14.17.0/bin/node'
+let g:coc_node_path = '~/.nodebrew/current/bin/node'
+"" let g:coc_node_path = '~/.nvm/versions/node/v14.17.0/bin/node'
 
 nnoremap <C-g> :Rg<Space>
 nnoremap <C-p> :GFiles<CR>
