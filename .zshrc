@@ -30,6 +30,7 @@ export LSCOLORS=gxHxcxdxbxegedabagacad #lsの時に色をつける
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' #大小文字を区別しない
 PROMPT=" %F{cyan}lab ( @_@) %f %c $ " #プロンプト
 #PROMPT=" %F{#556779}%n %f %c $ " #プロンプト
+alias vim=nvim
 
 #補完
 autoload -U compinit

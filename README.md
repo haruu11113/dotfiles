@@ -36,6 +36,7 @@ chsh -s $(which zsh)
 ```
 
 install zplugin
+https://qiita.com/taiyodayo/items/c1ebdc863e6baa18ea06
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)" )
 ```

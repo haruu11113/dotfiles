@@ -37,7 +37,8 @@ syntax on "シンタクス
 set ignorecase "大文字/小文字の区別なく検索する
 set smartcase "検索文字列に大文字が含まれている場合は区別して検索する
 set wrapscan
-set hlsearch "検索にマッチした部分をハイライト set incsearch "検索文字を入力中もハイライトされる nnoremap <F3> :noh<CR> "F3を押すとハイライトが消える
+set hlsearch "検索にマッチした部分をハイライト set incsearch "検索文字を入力中もハイライトされる
+nnoremap <F3> :noh<CR> "F3を押すとハイライトが消える
 "======== files ========
 
 set nobackup
@@ -78,7 +79,8 @@ set showcmd "ステータスラインにコマンドを表示
 set encoding=utf8
 set backspace=indent,eol,start
 
-let g:coc_node_path = '~/.nodebrew/current/bin/node'
+# let g:coc_node_path = '~/.nodebrew/current/bin/node'
+let g:coc_node_path = '~/.nvm/versions/node/v14.17.0/bin/node'
 
 nnoremap <C-g> :Rg<Space>
 nnoremap <C-p> :GFiles<CR>
