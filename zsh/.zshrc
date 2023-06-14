@@ -10,7 +10,7 @@ HISTSIZE=50000
 SAVEHIST=50000
 export LSCOLORS=gxHxcxdxbxegedabagacad # lsの時に色をつける
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 大小文字を区別しない
-PROMPT=" %F{green}pro ( '_') %f %c $ " # プロンプト
+PROMPT=" %F{cyan}lab ( @_@) %f %c $ " # プロンプト
 
 autoload -U compinit # 補完
 compinit # 補完
@@ -39,6 +39,7 @@ alias vbs="VBoxManage startvm --type headless"
 alias tarunz="tar -xvzfp"
 alias tarz="tar -cvzfp"
 alias -g B='`git branch --all | grep -v HEAD | fzf -m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
+alias vim="nvim"
 # alias open="xdg-open"
 #rmをゴミ箱行きに変更
 if [ type trash-put &> /dev/null ]; then
@@ -101,11 +102,10 @@ bindkey '^R' buffer-fzf-history
 # plugins
 # =======
 # git の補完を効かせる。補完＆エイリアスが追加される
-# zplugin plugins/git, fromm:oh-my-zsh
-zinit ice wait'2'
-zinit light peterhurford/git-aliases.zsh
-zinit light zsh-users/zsh-autosuggestions #入力途中に候補をうっすら表示
-zinit light zsh-users/zsh-history-substring-search #ヒストリの補完を強化する
+# zinit ice wait'2'
+# zinit light peterhurford/git-aliases.zsh
+# zinit light zsh-users/zsh-autosuggestions #入力途中に候補をうっすら表示
+# zinit light zsh-users/zsh-history-substring-search #ヒストリの補完を強化する
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -124,3 +124,6 @@ if [ -f '~/google-cloud-sdk/path.zsh.inc' ]; then . '~/google-cloud-sdk/path.zsh
 
 # The next line enables shell command completion for gcloud.
 if [ -f '~/google-cloud-sdk/completion.zsh.inc' ]; then . '~/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Rust, cargo command
+source $HOME/.cargo/env

@@ -1,17 +1,50 @@
 set shell="/usr/bin/zsh"
 
-if &compatible
-    set nocompatible
-endif
-set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
+" Ward off unexpected things that your distro might have made, as
+" well as sanely reset options when re-sourcing .vimrc
+set nocompatible
 
-if dein#load_state('$HOME/.vim/dein')
-    call dein#begin('$HOME/.vim/dein')
-    call dein#load_toml('$HOME/.config/nvim/tomls/dein.toml', {'lazy': 0})
-    call dein#load_toml('$HOME/.config/nvim/tomls/dein_lazy.toml', {'lazy': 1})
-    call dein#end()
-    call dein#save_state()
+" Set dein base path (required)
+" let s:dein_base = '~/.casche/dein/'
+
+" Set dein source path (required)
+" let s:dein_src = '~/.cache/dein/repos/github.com/Shougo/dein.vim'
+
+" Set dein runtime path (required)
+" execute 'set runtimepath+=' .. s:dein_src
+execute 'set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim'
+
+" dein Scripts ===================================================
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+if dein#load_state('~/.cache/dein')
+  echo "ガンバ！"
+
+  " Your plugins go here:
+  call dein#begin('~/.cache/dein')
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#load_toml('~/.config/nvim/tomls/dein.toml',      {'lazy': 0})
+  call dein#load_toml('~/.config/nvim/tomls/dein_lazy.toml', {'lazy': 1})
+
+  if dein#check_install()
+    call dein#install()
+  endif
+
+  " Finish dein initialization (required)
+  call dein#end()
+  call dein#save_state()
 endif
+
+" Attempt to determine the type of a file based on its name and possibly its
+" contents. Use this to allow intelligent auto-indenting for each filetype,
+" and for plugins that are filetype specific.
+" filetype indent plugin on
+
+" Enable syntax highlighting
+if has('syntax')
+  syntax on
+endif
+
+" Uncomment if you want to install not-installed plugins on startup.
 if dein#check_install()
     call dein#install()
 endif
@@ -70,7 +103,6 @@ set showmatch "閉じカッコ入力時、対応する過去に一瞬移動
 nmap <C-h> <Plug>AirlineSelectPrevTab "タブ移動のショートカット
 nmap <C-l> <Plug>AirlineSelectNextTab "タブ移動のショートカット
 
-nmap <C-n> :NERDTreeToggle<CR>
 
 colorscheme desert
 set clipboard+=unnamed "クリップボード使う
@@ -82,6 +114,3 @@ set backspace=indent,eol,start
 let g:coc_node_path = '~/.nodebrew/current/bin/node'
 "" let g:coc_node_path = '~/.nvm/versions/node/v14.17.0/bin/node'
 
-nnoremap <C-g> :Rg<Space>
-nnoremap <C-p> :GFiles<CR>
-nnoremap <C-h> :History<CR>

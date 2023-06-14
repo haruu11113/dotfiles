@@ -1,9 +1,0 @@
-{
-  "diagnostic.enable": false,
-  "python.linting.enabled": false,
-  "jedi": {
-    "enable": true,
-    "startupMessage": false
-  },
-  "python.jediPath": "~/.pyenv/versions/3.6.9/lib/python3.6/site-packages/"
-}

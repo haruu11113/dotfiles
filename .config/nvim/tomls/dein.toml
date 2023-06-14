@@ -1,11 +1,12 @@
 [[plugins]]
-repo = 'Shougo/dein.vim'
-
-[[plugins]]
-repo = 'cocopon/iceberg.vim'
-
-[[plugins]]
 repo = 'nanotech/jellybeans.vim'
+
+
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+hook_add = """
+    nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
+"""
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
@@ -18,23 +19,33 @@ hook_add = """
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray "偶数インデントのカラー
 """
 
+
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
+
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 
+
 [[plugins]]
-repo = 'tpope/vim-commentary'
+repo = 'tomtom/tcomment_vim'
+hook_add = """
+    nnoremap <C-/> <Plug>RepeatTComment<CR>
+"""
+
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
 
+
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
+
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
@@ -60,11 +71,6 @@ hook_add = """
     let g:airline_section_c = "%t"
 """
 
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add = """
-    let NERDTreeShowHidden=1
-"""
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
@@ -74,10 +80,12 @@ hook_add = """
     let g:webdevicons_conceal_nerdtree_brackets = 1
 """
 
+
 [[plugins]]
 repo = 'junegunn/fzf'
 hook_post_update = './install --all'
 merged = 0
+
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
@@ -94,15 +102,10 @@ hook_add = """
     nnoremap <C-h> :History<CR>
 """
 
-[[plugins]]
-repo = 'neoclide/coc.nvim'
-build = './install.sh nightly'
-hook_add = """
-    source ~/.config/nvim/plugins/coc-settings.json
-"""
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
+
 
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
