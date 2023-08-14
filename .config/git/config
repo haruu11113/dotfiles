@@ -22,3 +22,9 @@
 	trustExitCode = true
 [credential]
     helper = wincred
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[fetch]
+	prune = true
+
