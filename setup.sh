@@ -1,7 +1,25 @@
 #!/usr/bin/zsh
 
 # ".cheetsheet" ".config/nvim/plugins/vim-lsp.rc.vim"
-dotfiles=( ".tmux.conf" "ide" "ide2" "ide3" ".vimrc" ".config/nvim/init.vim" ".config/nvim/tomls/dein.toml" ".config/nvim/tomls/dein_lazy.toml" ".config/git/config" ".config/git/ignore" ".config/nvim/plugins/coc.rc.vim" ".skhdrc" ".yabairc" ".config/nvim/plugins/coc-settings.json" ".config/sheldon/plugins.toml")
+# ".config/nvim/plugins/coc.rc.vim"
+dotfiles=(
+        ".tmux.conf"
+        "ide" "ide2" "ide3"
+        ".skhdrc" ".yabairc"
+        ".config/sheldon/plugins.toml"
+        ".config/git/config" ".config/git/ignore"
+        ".vimrc"
+        ".config/nvim/init.vim"
+        ".config/nvim/tomls/dein.toml" ".config/nvim/tomls/dein_lazy.toml"
+        ".config/nvim/plugins/coc-settings.json"
+        ".config/nvim/plugins/LanguageClient-neovim.rc.vim"
+        ".config/nvim/plugins/syntastic.rc.vim"
+        "syntastic-local-eslint.rc.vim"
+        ".config/nvim/plugins/vim-prettier.rc.vim"
+        ".config/nvim/plugins/vim-pug-complete.rc.vim"
+        ".config/nvim/plugins/vim-vue.rc.vim"
+        ".config/nvim/plugins/syntastic-local-eslint.rc.vim"
+        )
 for f in ${dotfiles[@]}; do
     echo ${f}
     echo "リンク作成を開始します"
@@ -20,7 +38,6 @@ done
 
 
 #!/usr/bin/zsh
-
 dotfiles=(".zshrc")
 for f in ${dotfiles[@]}; do
     echo ${f}

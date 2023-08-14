@@ -1,7 +1,6 @@
 ## Iintroduction
 This is my zsh, tmux and vim setup.
 
-
 ## Get Start to Use
 ### 1. Please clone this repository on your PC.
 ```
@@ -39,19 +38,32 @@ brew install zsh
 chsh -s $(which zsh)
 ```
 
-### install zplugin
-#### [~~zplugin~~]
-moreved this repository
-https://qiita.com/taiyodayo/items/c1ebdc863e6baa18ea06~~
-```
-~~sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)" )
-```
+### 5. Install zplugin
+### [~~zplugin~~]
+<details>
+<summary> install zplugin</summary>
+    moreved this repository
+    https://qiita.com/taiyodayo/items/c1ebdc863e6baa18ea06
 
-#### [Sheldon]
+    ```
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)" )
+    ```
+</details>
+
+### [Sheldon]
 https://github.com/rossmacarthur/sheldon#-installation
 ```
 cargo install sheldon
 ```
+
+<details>
+<summary>install Rust / cargo command </summary>
+    https://outputable.com/post/start-rust/
+
+    ```
+    $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    ```
+</details>
 
 
 
@@ -61,26 +73,29 @@ cargo install sheldon
 brew install neovim
 ```
 
-##### for install neovim==0.9
-https://github.com/neovim/neovim/wiki/Installing-Neovim#appimage-universal-linux-package
-''AppImage ("universal" Linux package)''
+#### For install neovim==0.9
+<details>
+<summary> go ''AppImage ("universal" Linux package)'' </summary>
+    https://github.com/neovim/neovim/wiki/Installing-Neovim#appimage-universal-linux-package
 
-```
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-./nvim.appimage
-If the ./nvim.appimage command fails, try:
+    ```
+    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+    chmod u+x nvim.appimage
+    ./nvim.appimage
+    If the ./nvim.appimage command fails, try:
 
-./nvim.appimage --appimage-extract
-./squashfs-root/AppRun --version
+    ./nvim.appimage --appimage-extract
+    ./squashfs-root/AppRun --version
 
-sudo mv squashfs-root /
-sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
-nvim
-```
+    sudo mv squashfs-root /
+    sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
+    nvim
+    ```
+</details>
 
 
 ### 6. install pyenv
+
 ```
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 pyenv install 3.6.0
@@ -96,8 +111,6 @@ pip install python-language-server pynvim
 :call coc#util#install()
 ```
 
-## Rust / cargo command and install sheldon
-https://outputable.com/post/start-rust/
 
 ## nodejs
 ```nvm```, ```npm```

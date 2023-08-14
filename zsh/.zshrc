@@ -28,6 +28,8 @@ export PATH="/usr/local/bin:$PATH"
 # alias
 # =======
 alias tree="tree -NC"
+# alias tree = 'tree -a -I "\.DS_Store|\.git|node_modules|vendor\/bundle" -N'
+alias vim='nvim'
 alias ll='ls -lGF' # lsの時に色をつける
 alias ls='ls -GF' # lsの時に色をつける
 alias g="git"
@@ -68,21 +70,21 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --inline-info --preview 'head -100 {}'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-cd-fzf-find() {
-    local DIR=$(find ./ -path '*/\.*' -name .git -prune -o -type d -print 2> /dev/null | fzf +m)
-    if [ -n "$DIR" ]; then
-        cd $DIR
-    fi
-}
-alias cdf=cd-fzf-find
+# cd-fzf-find() {
+#     local DIR=$(find ./ -path '*/\.*' -name .git -prune -o -type d -print 2> /dev/null | fzf +m)
+#     if [ -n "$DIR" ]; then
+#         cd $DIR
+#     fi
+# }
+# alias cdf=cd-fzf-find
 
-vim-fzf-find() {
-    local FILE=$(find ./ -path '*/\.*' -name .git -prune -o -type f -print 2> /dev/null | fzf +m)
-    if [ -n "$FILE" ]; then
-        ${EDITOR:-vim} $FILE
-    fi
-}
-alias vimf=vim-fzf-find
+# vim-fzf-find() {
+#     local FILE=$(find ./ -path '*/\.*' -name .git -prune -o -type f -print 2> /dev/null | fzf +m)
+#     if [ -n "$FILE" ]; then
+#         ${EDITOR:-vim} $FILE
+#     fi
+# }
+# alias vimf=vim-fzf-find
 
 function buffer-fzf-history() {
     local HISTORY=$(history -n -r 1 | fzf +m)
