@@ -38,7 +38,6 @@ hook_add = """
     nnoremap <C-/> <Plug>RepeatTComment<CR>
 """
 
-
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
 
@@ -109,3 +108,11 @@ repo = 'prabirshrestha/vim-lsp'
 
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
+
+
+[[plugins]]
+repo = 'prettier/vim-prettier'
+on_ft = ['javascript', 'typescript', 'vue', 'css', 'scss', 'json', 'markdown', 'less', 'json', 'graphql',  'yaml', 'html']
+hook_add = """
+    let g:prettier#exec_cmd_path = '/home/haru/.nvm/versions/node/v14.17.0/bin/prettier'
+"""
