@@ -10,7 +10,7 @@ HISTSIZE=50000
 SAVEHIST=50000
 export LSCOLORS=gxHxcxdxbxegedabagacad # lsの時に色をつける
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 大小文字を区別しない
-PROMPT=" %F{cyan}lab ( @_@) %f %c $ " # プロンプト
+PROMPT=" %F{green}pro ( '_') %f %c $ " # プロンプト
 
 autoload -U compinit # 補完
 compinit # 補完

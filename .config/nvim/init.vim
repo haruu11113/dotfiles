@@ -17,14 +17,13 @@ execute 'set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim'
 " dein Scripts ===================================================
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state('~/.cache/dein')
-  echo "ガンバ！"
-
-  " Your plugins go here:
+" Your plugins go here:
   call dein#begin('~/.cache/dein')
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
   call dein#load_toml('~/.config/nvim/tomls/dein.toml',      {'lazy': 0})
   call dein#load_toml('~/.config/nvim/tomls/dein_lazy.toml', {'lazy': 1})
 
+  echo "ガンバ :)"
   if dein#check_install()
     call dein#install()
   endif
@@ -117,5 +116,5 @@ set backspace=indent,eol,start
 let g:coc_node_path = '~/.nodebrew/current/bin/node'
 "" let g:coc_node_path = '~/.nvm/versions/node/v14.17.0/bin/node'
 
-nnoremap <C-g> :Rg<Space>
+"nnoremap <C-g> :Rg<Space>
 nnoremap <C-p> :FZF<CR>

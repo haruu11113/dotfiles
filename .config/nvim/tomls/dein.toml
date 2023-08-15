@@ -1,7 +1,9 @@
+## color theme
 [[plugins]]
 repo = 'nanotech/jellybeans.vim'
 
 
+## File
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
 hook_add = """
@@ -9,43 +11,37 @@ hook_add = """
 """
 
 [[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
+repo = 'junegunn/fzf'
+hook_post_update = './install --all'
+merged = 0
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
 hook_add = """
-    let g:indent_guides_enable_on_vim_startup=1 "デフォルトでインデント出す
-    let g:indent_guides_start_level=2 "ガイドをスタートするインデント
-    let g:indent_guides_guide_size=1 " ガイドの幅
-    let g:indent_guides_auto_colors = 0
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=gray "奇数インデントのカラー
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray "偶数インデントのカラー
+    command! -bang -nargs=* Rg
+    \ call fzf#vim#grep(
+    \ 'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
+    \ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+    \ : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+    \ <bang>0)
+"""
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+hook_add = """
+    let g:airline_powerline_fonts = 1
+    let g:webdevicons_enable_nerdtree = 1
+    let g:webdevicons_conceal_nerdtree_brackets = 1
 """
 
 
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-
-
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-
-
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
-
-
-[[plugins]]
-repo = 'tomtom/tcomment_vim'
-hook_add = """
-    nnoremap <C-/> <Plug>RepeatTComment<CR>
-"""
-
-
-[[plugins]]
-repo = 'easymotion/vim-easymotion'
-
-
+## window decoration
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
-
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
@@ -71,41 +67,46 @@ hook_add = """
     let g:airline_section_c = "%t"
 """
 
-
 [[plugins]]
-repo = 'ryanoasis/vim-devicons'
+repo = 'nathanaelkane/vim-indent-guides'
 hook_add = """
-    let g:airline_powerline_fonts = 1
-    let g:webdevicons_enable_nerdtree = 1
-    let g:webdevicons_conceal_nerdtree_brackets = 1
+    let g:indent_guides_enable_on_vim_startup=1 "デフォルトでインデント出す
+    let g:indent_guides_start_level=2 "ガイドをスタートするインデント
+    let g:indent_guides_guide_size=1 " ガイドの幅
+    let g:indent_guides_auto_colors = 0
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=gray "奇数インデントのカラー
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray "偶数インデントのカラー
 """
 
 
+## git
 [[plugins]]
-repo = 'junegunn/fzf'
-hook_post_update = './install --all'
-merged = 0
-
+repo = 'tpope/vim-fugitive' # able to use git command in vim
 
 [[plugins]]
-repo = 'junegunn/fzf.vim'
-depends = 'fzf'
+repo = 'airblade/vim-gitgutter' # show diff
+
+
+## shortuts
+[[plugins]]
+repo = 'tomtom/tcomment_vim' # comment out
 hook_add = """
-    command! -bang -nargs=* Rg
-    \ call fzf#vim#grep(
-    \ 'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
-    \ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
-    \ : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
-    \ <bang>0)
+    nnoremap <C-/> <Plug>RepeatTComment<CR>
 """
 
+[[plugins]]
+repo = 'easymotion/vim-easymotion' # make it easy to move few words
 
+
+## lsp
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 
-
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
 
 [[plugins]]
 repo = 'posva/vim-vue'
@@ -113,56 +114,56 @@ hook_add = '''
 source ~/.config/nvim/plugins/vim-vue.rc.vim
 '''
 
-[[plugins]]
-repo = 'prettier/vim-prettier'
-build = 'npm install'
-on_ft = ['javascript', 'typescript', 'vue', 'css', 'scss', 'json', 'markdown']
-hook_add = '''
-source ~/.config/nvim/plugins/vim-prettier.rc.vim
-'''
+# [[plugins]]
+# repo = 'prettier/vim-prettier'
+# build = 'npm install'
+# on_ft = ['javascript', 'typescript', 'vue', 'css', 'scss', 'json', 'markdown']
+# hook_add = '''
+# source ~/.config/nvim/plugins/vim-prettier.rc.vim
+# '''
 
 [[plugins]]
 repo = 'dense-analysis/ale'
 hook_add = """
-let g:ale_fixers = {
-\   'typescript': ['prettier'],
-\   'typescriptreact': ['prettier'],
-\   'javascript': ['prettier'],
-\   'javascriptreact': ['prettier'],
-\   'css': ['prettier'],
-\}
+    let g:ale_fixers = {
+    \   'typescript': ['prettier'],
+    \   'typescriptreact': ['prettier'],
+    \   'javascript': ['prettier'],
+    \   'javascriptreact': ['prettier'],
+    \   'css': ['prettier'],
+    \}
 
-let g:ale_sign_error = 'P>'
-let g:ale_sign_warning = 'P-'
-let g:ale_echo_msg_format = '[%linter%] %code: %%s'
-let g:ale_statusline_format = ['E%d', 'W%d', 'OK']
+    let g:ale_sign_error = 'P>'
+    let g:ale_sign_warning = 'P-'
+    let g:ale_echo_msg_format = '[%linter%] %code: %%s'
+    let g:ale_statusline_format = ['E%d', 'W%d', 'OK']
 
-nmap <silent> <C-w>j <Plug>(ale_next_wrap)
-nmap <silent> <C-w>k <Plug>(ale_previous_wrap)
+    nmap <silent> <C-w>j <Plug>(ale_next_wrap)
+    nmap <silent> <C-w>k <Plug>(ale_previous_wrap)
 
-let g:ale_fix_on_save = 1
-let g:ale_javascript_prettier_use_local_config = 1
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all'
+    let g:ale_fix_on_save = 1
+    let g:ale_javascript_prettier_use_local_config = 1
+    let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all'
 """
 
-[[plugins]]
-repo = 'vim-syntastic/syntastic'
-hook_add = '''
-source ~/.config/nvim/plugins/syntastic.rc.vim
-'''
-
-[[plugins]]
-repo = 'mtscout6/syntastic-local-eslint.vim'
-hook_add = '''
-source ~/.config/nvim/plugins/syntastic-local-eslint.rc.vim
-'''
+# [[plugins]]
+# repo = 'vim-syntastic/syntastic'
+# hook_add = '''
+# source ~/.config/nvim/plugins/syntastic.rc.vim
+# '''
+#
+# [[plugins]]
+# repo = 'mtscout6/syntastic-local-eslint.vim'
+# hook_add = '''
+# source ~/.config/nvim/plugins/syntastic-local-eslint.rc.vim
+# '''
 
 [[plugins]]
 repo = 'digitaltoad/vim-pug'
 on_ft = ['pug', 'vue']
 
-[[plugins]]
-repo = 'dNitro/vim-pug-complete'
-hook_add = '''
-source ~/.config/nvim/plugins/vim-pug-complete.rc.vim
-'''
+# [[plugins]]
+# repo = 'dNitro/vim-pug-complete'
+# hook_add = '''
+# source ~/.config/nvim/plugins/vim-pug-complete.rc.vim
+# '''
