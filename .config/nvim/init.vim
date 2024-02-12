@@ -59,7 +59,7 @@ set shiftwidth=4 "自動インデントをスペース4つ
 set smartindent "オートインデント
 set laststatus=2 "スーテータスバー(2=常に表示, 1=ウィンドウ数が2以上なら, 0表示しない)
 set softtabstop=2 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
-set cursorline "カーソルがある行を強調
+" set cursorline "カーソルがある行を強調
 set list listchars=tab:\▸\-
 set expandtab "tabの代わりに空白を入れる
 set mouse=a "マウスでの移動
