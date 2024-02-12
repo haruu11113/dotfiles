@@ -133,7 +133,6 @@ if [ -f '/Users/harukaneko/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/haru
 if [ -f '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc'; fi
 
 # ruby
-  echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc
   export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
   export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
