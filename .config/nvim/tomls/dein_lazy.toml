@@ -5,3 +5,23 @@ hook_add = '''
 repo  = 'phpactor/phpactor'
 on_ft = ['php']
 build = 'composer install'
+
+## git
+[[plugins]]
+hook_add = """
+    set updatetime=250 " gitgutterの更新時間を短くする
+    let g:gitgutter_highlight_lines=1 " 変更行をハイライト
+    let g:gitgutter_override_sign_column_highlight=1 " サインカラムのハイライトを上書き
+    highlight GitGutterAdd ctermfg=green
+    highlight GitGutterChange ctermfg=blue
+    highlight GitGutterDelete ctermfg=red
+    let g:gitgutter_sign_added = '++'
+    let g:gitgutter_sign_modified = 'yy'
+    let g:gitgutter_sign_removed = '--'
+    let g:gitgutter_sign_removed_first_line = '^^'
+    let g:gitgutter_sign_modified_removed = 'ww'
+"""
+repo = 'airblade/vim-gitgutter' # show diff
+
+[[plugins]]
+repo = 'tpope/vim-fugitive' #Gdiff
