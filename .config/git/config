@@ -26,5 +26,5 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [fetch]
-	prune = true
+    prune = true
 
