@@ -63,9 +63,25 @@ set softtabstop=2 "連続した空白に対してタブキーやバックスペ�
 set list listchars=tab:\▸\-
 set expandtab "tabの代わりに空白を入れる
 set mouse=a "マウスでの移動
+set mouse=nic
 syntax on "シンタクス
 inoremap <silent> jj <ESC>
 " noremap <C-j> <ESC>
+
+"" プラグインnanotech/jellybeans.vimの設定. 背景色を透過させる
+"" colorscheme desertはhookですることでoverriteを成功させている
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
+highlight LineNr ctermbg=NONE guibg=NONE
+highlight Folded ctermbg=NONE guibg=NONE
+highlight EndOfBuffer ctermbg=NONE guibg=NONE
+let g:jellybeans_overrides = {
+  \ 'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
+  \ }
+if has('termguicolors') && &termguicolors
+    let g:jellybeans_overrides['background']['guibg'] = 'none'
+endif
+
 
 "======== git ========
 highlight GitGutterAdd ctermfg=blue ctermbg=brown
@@ -165,7 +181,6 @@ nmap <C-l> <Plug>AirlineSelectNextTab "タブ移動のショートカット
 " map <C-n> :NERDTreeToggle<CR>
 " let NERDTreeShowHidden = 1
 
-colorscheme desert
 set clipboard+=unnamed "クリップボード使う
 set ttimeoutlen=50 "モード切り替えを早く?
 set showcmd "ステータスラインにコマンドを表示
