@@ -44,7 +44,7 @@ alias tarunz="tar -xvzfp"
 alias tarz="tar -cvzfp"
 alias -g B='`git branch --all | grep -v HEAD | fzf -m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
 alias vim="nvim"
-alias vf="vim \$(fzf)"
+# alias vf="vim \$(fzf)"
 # alias open="xdg-open"
 #rmをゴミ箱行きに変更
 if [ type trash-put &> /dev/null ]; then
@@ -81,13 +81,13 @@ export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --inline-info --
 # }
 # alias cdf=cd-fzf-find
 
-# vim-fzf-find() {
-#     local FILE=$(find ./ -path '*/\.*' -name .git -prune -o -type f -print 2> /dev/null | fzf +m)
-#     if [ -n "$FILE" ]; then
-#         ${EDITOR:-vim} $FILE
-#     fi
-# }
-# alias vimf=vim-fzf-find
+function vim-fzf-find() {
+    local FILE=$(find . -path '*\.*' -name .git -prune -o -name vendor -prune -o -name 'node_modules' -prune -o -name 'storage\/framework' -prune -o -name ".nuxt" -prune -o -type f 2> /dev/null | fzf +m)
+    if [ -n "$FILE" ]; then
+        ${EDITOR:-vim} $FILE
+    fi
+}
+alias vf=vim-fzf-find
 
 function buffer-fzf-history() {
     local HISTORY=$(history -n -r 1 | fzf +m)
@@ -101,6 +101,13 @@ function buffer-fzf-history() {
 zle -N buffer-fzf-history
 bindkey '^R' buffer-fzf-history
 
+function git-branch() {
+  local branches branch
+  branches=$(git --no-pager branch -a) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+alias gb=git-branch
 
 
 # =======
