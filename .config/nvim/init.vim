@@ -67,6 +67,9 @@ syntax on "シンタクス
 inoremap <silent> jj <ESC>
 " noremap <C-j> <ESC>
 
+"======== git ========
+highlight GitGutterAdd ctermfg=blue ctermbg=brown
+set signcolumn=yes
 
 "======== 検索 ========
 set ignorecase "大文字/小文字の区別なく検索する
