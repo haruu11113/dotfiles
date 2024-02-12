@@ -94,6 +94,12 @@ repo = 'nathanaelkane/vim-indent-guides'
 
 ## git
 [[plugins]]
+hook_add = """
+    let g:gitgutter_highlight_lines = 1
+    set updatetime=250
+    let g:gitgutter_override_sign_column_highlight = 0
+    highlight SignColumn ctermbg=brown
+"""
 repo = 'airblade/vim-gitgutter' # show diff
 
 
@@ -112,7 +118,6 @@ repo = 'easymotion/vim-easymotion' # make it easy to move few words
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
 [[plugins]]
-repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
 " TypeScript, JavaScript
 if executable('typescript-language-server')
@@ -127,6 +132,7 @@ endif
 
 " 他言語サーバの読み込みはここに挿入
 '''
+repo = 'prabirshrestha/vim-lsp'
 [[plugins]]
 repo = 'Shougo/ddc.vim'
 [[plugins]]
@@ -191,4 +197,3 @@ repo = 'alvan/vim-closetag'
 ## copilot
 [[plugins]]
 repo = 'github/copilot.vim'
-

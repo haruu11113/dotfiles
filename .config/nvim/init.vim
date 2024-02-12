@@ -127,9 +127,6 @@ call ddc#custom#patch_global({
 \	],
 \	'sourceOptions': {
 \		'_': {
-\			'matchers'  : ['matcher_fuzzy'],
-\			'sorters'   : ['sorter_fuzzy'],
-\			'converters': ['converter_fuzzy'],
 \			'ignoreCase': v:true,
 \		},
 \		'around': {
@@ -181,4 +178,3 @@ nnoremap <C-p> :FZF<CR>
 set wildmenu
 set wildmode=full
 autocmd BufWritePre <buffer> LspDocumentFormatSync "保存時にフォーマット
-
