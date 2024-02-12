@@ -44,6 +44,7 @@ alias tarunz="tar -xvzfp"
 alias tarz="tar -cvzfp"
 alias -g B='`git branch --all | grep -v HEAD | fzf -m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
 alias vim="nvim"
+alias vf="vim \$(fzf)"
 # alias open="xdg-open"
 #rmをゴミ箱行きに変更
 if [ type trash-put &> /dev/null ]; then
