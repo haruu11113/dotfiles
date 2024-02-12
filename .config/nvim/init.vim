@@ -23,7 +23,7 @@ if dein#load_state('~/.cache/dein')
   call dein#load_toml('~/.config/nvim/tomls/dein.toml',      {'lazy': 0})
   call dein#load_toml('~/.config/nvim/tomls/dein_lazy.toml', {'lazy': 1})
 
-  echo "ガンバ :)"
+  echo "ToDoをメモろう"
   if dein#check_install()
     call dein#install()
   endif
@@ -64,6 +64,9 @@ set list listchars=tab:\▸\-
 set expandtab "tabの代わりに空白を入れる
 set mouse=a "マウスでの移動
 syntax on "シンタクス
+inoremap <silent> jj <ESC>
+" noremap <C-j> <ESC>
+
 
 "======== 検索 ========
 set ignorecase "大文字/小文字の区別なく検索する
@@ -71,7 +74,7 @@ set smartcase "検索文字列に大文字が含まれている場合は区別�
 set wrapscan
 set hlsearch "検索にマッチした部分をハイライト set incsearch "検索文字を入力中もハイライトされる
 nnoremap <F3> :noh<CR> "F3を押すとハイライトが消える
-"======== files ========
+
 
 "======== files ========
 set nobackup
@@ -92,19 +95,75 @@ if has("autocmd")
     \ endif
 endif
 
+autocmd FileType php setlocal omnifunc=phpactor#Complete
+
 "自動閉じカッコ
 imap { {}<LEFT>
 imap [ []<LEFT>
 imap ( ()<LEFT>
 
+"==================================
+" LSP Settings
+"===================================
+let mapleader = " "
+nnoremap <Leader>li :LspManageServers<CR>
+nnoremap <Leader>LI :LspInstallServer<CR>
+nnoremap <Leader>ls :LspStatus<CR>
+nnoremap <Leader>lh :LspHover<CR>
+nnoremap ]d :LspNextDiagnostic<CR>
+nnoremap [d :LspPreviousDiagnostic<CR>
+nnoremap ]e :LspNextError<CR>
+nnoremap [e :LspPreviousError<CR>
+nnoremap <C-]> :LspDefinition<CR>
+"===================================
+" Ddc Settings
+"===================================
+call ddc#custom#patch_global({
+\	'ui': 'native',
+\	'sources': [
+\		'vim-lsp',
+\		'around',
+\		'buffer',
+\	],
+\	'sourceOptions': {
+\		'_': {
+\			'matchers'  : ['matcher_fuzzy'],
+\			'sorters'   : ['sorter_fuzzy'],
+\			'converters': ['converter_fuzzy'],
+\			'ignoreCase': v:true,
+\		},
+\		'around': {
+\			'mark': '[Arround]',
+\		},
+\		'buffer': {
+\			'mark': '[Buffer]',
+\		},
+\		'vim-lsp': {
+\			'mark': '[LSP]',
+\			'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+\		},
+\	},
+\	'sourceParams': {
+\		'around': { 'maxSize': 500 },
+\		'buffer': {
+\			'limitBytes': 5000000,
+\			'forceCollect': v:true,
+\			'fromAltBuf': v:true,
+\		},
+\	 },
+\})
+call ddc#enable()
+
+
 
 "======== その他 ========
+set ttimeoutlen=50 "escapeを早く動作させる
 set showmatch "閉じカッコ入力時、対応する過去に一瞬移動
 nmap <C-h> <Plug>AirlineSelectPrevTab "タブ移動のショートカット
 nmap <C-l> <Plug>AirlineSelectNextTab "タブ移動のショートカット
 
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeShowHidden = 1
+" map <C-n> :NERDTreeToggle<CR>
+" let NERDTreeShowHidden = 1
 
 colorscheme desert
 set clipboard+=unnamed "クリップボード使う
@@ -113,8 +172,13 @@ set showcmd "ステータスラインにコマンドを表示
 set encoding=utf8
 set backspace=indent,eol,start
 
-let g:coc_node_path = '~/.nodebrew/current/bin/node'
+let g:coc_node_path = '~/.nodebrew/current/bin/nnnode'
 "" let g:coc_node_path = '~/.nvm/versions/node/v14.17.0/bin/node'
 
 "nnoremap <C-g> :Rg<Space>
 nnoremap <C-p> :FZF<CR>
+
+set wildmenu
+set wildmode=full
+autocmd BufWritePre <buffer> LspDocumentFormatSync "保存時にフォーマット
+
