@@ -5,6 +5,7 @@
 dotfiles=(
         ".tmux.conf"
         "ide" "ide2" "ide3"
+        ".ctags"
         ".skhdrc" ".yabairc"
         ".config/sheldon/plugins.toml"
         ".config/git/config" ".config/git/ignore"

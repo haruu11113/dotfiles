@@ -10,9 +10,7 @@ HISTSIZE=50000
 SAVEHIST=50000
 export LSCOLORS=gxHxcxdxbxegedabagacad # lsの時に色をつける
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 大小文字を区別しない
-PROMPT=" %F{green}pro ( '_') %f %c $ " # プロンプト
-
-autoload -U compinit # 補完
+PROMPT=" %F{green}pro ( '_') %f %c $ " # プロンプト autoload -U compinit # 補完
 compinit # 補完
 
 XDG_CONFIG_HOME=$HOME/.config
@@ -44,6 +42,7 @@ alias tarunz="tar -xvzfp"
 alias tarz="tar -cvzfp"
 alias -g B='`git branch --all | grep -v HEAD | fzf -m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
 alias vim="nvim"
+alias ctags="`brew --prefix`/bin/ctags"
 # alias vf="vim \$(fzf)"
 # alias open="xdg-open"
 #rmをゴミ箱行きに変更
@@ -108,7 +107,6 @@ function git-branch() {
   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 alias gb=git-branch
-
 
 # =======
 # plugins

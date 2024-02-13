@@ -1,0 +1,3 @@
+
+--regex-php=/get([a-z|A-Z|0-9]+)Attribute/\1/
+--regex-php=/scope([a-z|A-Z|0-9]+)/\1/

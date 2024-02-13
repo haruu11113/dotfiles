@@ -5,6 +5,25 @@ hook_add = '''
 '''
 repo = 'nanotech/jellybeans.vim'
 
+## git
+[[plugins]]
+hook_add = '''
+    set updatetime=250 " gitgutterの更新時間を短くする
+    let g:gitgutter_highlight_lines=1 " 変更行をハイライト
+    let g:gitgutter_override_sign_column_highlight=1 " サインカラムのハイライトを上書き
+    highlight GitGutterAdd ctermfg=green
+    highlight GitGutterChange ctermfg=blue
+    highlight GitGutterDelete ctermfg=red
+    let g:gitgutter_sign_added = '++'
+    let g:gitgutter_sign_modified = 'yy'
+    let g:gitgutter_sign_removed = '--'
+    let g:gitgutter_sign_removed_first_line = '^^'
+    let g:gitgutter_sign_modified_removed = 'ww'
+'''
+repo = 'airblade/vim-gitgutter' # show diff
+
+[[plugins]]
+repo = 'tpope/vim-fugitive' #Gdiff
 
 ## File
 ### Tree finder
@@ -26,25 +45,21 @@ merged = 0
 repo = 'junegunn/fzf'
 
 [[plugins]]
+depends = 'junegunn/fzf'
 hook_add = """
-    command! -bang -nargs=* Rg
-    \ call fzf#vim#grep(
-    \ 'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
-    \ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
-    \ : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
-    \ <bang>0)
 """
-depends = 'fzf'
 repo = 'junegunn/fzf.vim'
 
 [[plugins]]
 hook_add = """
-    let g:airline_powerline_fonts = 1
-    let g:webdevicons_enable_nerdtree = 1
-    let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:airline_powerline_fonts = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
 """
 repo = 'ryanoasis/vim-devicons'
 
+# [[plugins]]
+# repo = 'jremmen/vim-ripgrep'
 
 ## window decoration
 [[plugins]]
@@ -54,11 +69,11 @@ repo = 'vim-airline/vim-airline-themes'
 # https://github.com/vim-airline/vim-airline/wiki/Screenshots
 [[plugins]]
 hook_add = """
-    let g:airline_theme='angr'
-    let g:airline#extensions#tabline#enabled=1
-    let g:airline#extensions#tabline#formatter='unique_tail'
-    let g:airline#extensions#tabline#buffer_idx_mode=1
-    let g:airline#extensions#tabline#buffer_idx_format = {
+let g:airline_theme='angr'
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#formatter='unique_tail'
+let g:airline#extensions#tabline#buffer_idx_mode=1
+let g:airline#extensions#tabline#buffer_idx_format = {
         \ '0': '0 ',
         \ '1': '1 ',
         \ '2': '2 ',
@@ -70,24 +85,24 @@ hook_add = """
         \ '8': '8 ',
         \ '9': '9 '
         \}
-    let g:airline#extensions#branch#enabled=1
-    let g:airline#extensions#hunks#enabled=1
-    let g:airline#extensions#tabline#enabled=1
-    let g:airline#extensions#wordcount#enabled=1
-    let g:airline#extensions#branch#vcs_checks = []
-    let g:airline#extensions#default#layout=[['a', 'b', 'c'], ['wordcount', 'error', 'warning', 'x', 'y', 'z']]
-    let g:airline_section_c = '%t'
+let g:airline#extensions#branch#enabled=1
+let g:airline#extensions#hunks#enabled=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#wordcount#enabled=1
+let g:airline#extensions#branch#vcs_checks = []
+let g:airline#extensions#default#layout=[['a', 'b', 'c'], ['wordcount', 'error', 'warning', 'x', 'y', 'z']]
+let g:airline_section_c = '%t'
 """
 repo = 'vim-airline/vim-airline'
 
 [[plugins]]
 hook_add = """
-    let g:indent_guides_enable_on_vim_startup=1 "デフォルトでインデント出す
+let g:indent_guides_enable_on_vim_startup=1 "デフォルトでインデント出す
     let g:indent_guides_start_level=2 "ガイドをスタートするインデント
-    let g:indent_guides_guide_size=1 " ガイドの幅
+let g:indent_guides_guide_size=1 " ガイドの幅
     let g:indent_guides_auto_colors = 0
     autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=gray "奇数インデントのカラー
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray "偶数インデントのカラー
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray "偶数インデントのカラー
 """
 repo = 'nathanaelkane/vim-indent-guides'
 
@@ -141,8 +156,8 @@ repo = 'Shougo/ddc-sorter_rank'
 repo = 'vim-denops/denops.vim'
 [[plugins]]
 repo = 'matsui54/ddc-buffer'
-[[plugins]]
-reop = 'shun/ddc-source-vim-lsp'
+# [[plugins]]
+# reop = 'shun/ddc-source-vim-lsp'
 [[plugins]]
 repo = 'tani/ddc-fuzzy'
 
@@ -158,6 +173,28 @@ repo = 'hrsh7th/cmp-path'
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip'
 
+### laravel
+## これらはphp / composerをmacに入れておく必要があるのでやめた
+# [[plugins]]
+# hook_post_update = '''
+#   if has('win32')
+#     let cmd = 'tools\\update-dll-mingw'
+#   elseif has('win32unix') " for Cygwin
+#     let cmd = 'make -f make_cygwin.mak'
+#   elseif executable('gmake')
+#     let cmd = 'gmake'
+#   else
+#     let cmd = 'make'
+#   endif
+#   let g:dein#plugin.build = cmd
+# '''
+# repo = 'Shougo/vimproc.vim'
+# [[plugins]]
+# repo = 'Shougo/unite.vim'
+# [[plugins]]
+# depends = 'Vimproc'
+# repo = 'm2mdas/phpcomplete-extended'
+# [[plugins]] repo = 'm2mdas/phpcomplete-extended-laravel'
 
 ### js
 [[plugins]]

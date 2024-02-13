@@ -134,41 +134,6 @@ nnoremap [d :LspPreviousDiagnostic<CR>
 nnoremap ]e :LspNextError<CR>
 nnoremap [e :LspPreviousError<CR>
 nnoremap <C-]> :LspDefinition<CR>
-"===================================
-" Ddc Settings
-"===================================
-call ddc#custom#patch_global({
-\	'ui': 'native',
-\	'sources': [
-\		'vim-lsp',
-\		'around',
-\		'buffer',
-\	],
-\	'sourceOptions': {
-\		'_': {
-\			'ignoreCase': v:true,
-\		},
-\		'around': {
-\			'mark': '[Arround]',
-\		},
-\		'buffer': {
-\			'mark': '[Buffer]',
-\		},
-\		'vim-lsp': {
-\			'mark': '[LSP]',
-\			'forceCompletionPattern': '\.\w*|:\w*|->\w*',
-\		},
-\	},
-\	'sourceParams': {
-\		'around': { 'maxSize': 500 },
-\		'buffer': {
-\			'limitBytes': 5000000,
-\			'forceCollect': v:true,
-\			'fromAltBuf': v:true,
-\		},
-\	 },
-\})
-call ddc#enable()
 
 
 
@@ -190,7 +155,8 @@ set backspace=indent,eol,start
 let g:coc_node_path = '~/.nodebrew/current/bin/nnnode'
 "" let g:coc_node_path = '~/.nvm/versions/node/v14.17.0/bin/node'
 
-"nnoremap <C-g> :Rg<Space>
+" vimgrep /{検索パターン}/g {検索対象ファイル} | cwindow 
+nnoremap <C-g> :Ag<CR>
 nnoremap <C-p> :FZF<CR>
 
 set wildmenu
