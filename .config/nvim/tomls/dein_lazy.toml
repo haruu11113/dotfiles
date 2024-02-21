@@ -1,8 +1,8 @@
-[[plugins]]
-hook_add = '''
-    source ~/.config/nvim/plugins/phpactor.nvim
-'''
-repo  = 'phpactor/phpactor'
-on_ft = ['php']
-build = 'composer install'
-
+# [[plugins]]
+# hook_add = '''
+#     source ~/.config/nvim/plugins/phpactor.nvim
+# '''
+# repo  = 'phpactor/phpactor'
+# on_ft = ['php']
+# build = 'composer install'
+#

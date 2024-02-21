@@ -21,7 +21,7 @@ if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
   call dein#load_toml('~/.config/nvim/tomls/dein.toml',      {'lazy': 0})
-  call dein#load_toml('~/.config/nvim/tomls/dein_lazy.toml', {'lazy': 1})
+  " call dein#load_toml('~/.config/nvim/tomls/dein_lazy.toml', {'lazy': 1})
 
   echo "ToDoをメモろう"
   if dein#check_install()
@@ -124,18 +124,17 @@ imap ( ()<LEFT>
 "==================================
 " LSP Settings
 "===================================
-let mapleader = " "
-nnoremap <Leader>li :LspManageServers<CR>
+" let mapleader = " "
+nnoremap <Leader>li :LspManageServers<CR> " 「Space l i」を順番に押すと、インストール可能なLSP一覧が出ます。インストールもここでできます
 nnoremap <Leader>LI :LspInstallServer<CR>
 nnoremap <Leader>ls :LspStatus<CR>
-nnoremap <Leader>lh :LspHover<CR>
+" nnoremap <Leader>lh :LspHover<CR>" 「Space l h」を順番に押すと、カーソル下の関数などの宣言を参照できます
+nnoremap <C-k> :LspHover<CR>" 「Space l h」を順番に押すと、カーソル下の関数などの宣言を参照できます
 nnoremap ]d :LspNextDiagnostic<CR>
-nnoremap [d :LspPreviousDiagnostic<CR>
+nnoremap [d :LspPreviousDiagnostic<CR> " 「[ e」を順番に押すと、LSPが検出した前のエラーにジャンプします
 nnoremap ]e :LspNextError<CR>
-nnoremap [e :LspPreviousError<CR>
-nnoremap <C-]> :LspDefinition<CR>
-
-
+nnoremap [e :LspPreviousError<CR> " 「] e」を順番に押すと、LSPが検出した次のエラーにジャンプします
+nnoremap <C-]> :LspDefinition<CR>" 「Ctrl+]」を同時に押すと、カーソル下の関数の宣言箇所へジャンプできます
 
 "======== その他 ========
 set ttimeoutlen=50 "escapeを早く動作させる
@@ -156,8 +155,8 @@ let g:coc_node_path = '~/.nodebrew/current/bin/nnnode'
 "" let g:coc_node_path = '~/.nvm/versions/node/v14.17.0/bin/node'
 
 " vimgrep /{検索パターン}/g {検索対象ファイル} | cwindow 
-nnoremap <C-g> :Ag<CR>
-nnoremap <C-p> :FZF<CR>
+nnoremap fg :Ag<CR>
+nnoremap fp :FZF<CR>
 
 set wildmenu
 set wildmode=full

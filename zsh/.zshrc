@@ -142,5 +142,6 @@ if [ -f '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc' ]; then . '/User
   export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
   export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
 export PATH=$PATH:/Users/harukaneko/Library/Android/sdk/platform-tools
 

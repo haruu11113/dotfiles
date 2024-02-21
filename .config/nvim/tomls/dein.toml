@@ -1,7 +1,7 @@
 ## color theme
 [[plugins]]
 hook_add = '''
-    colorscheme desert
+    colorscheme slate
 '''
 repo = 'nanotech/jellybeans.vim'
 
@@ -9,16 +9,16 @@ repo = 'nanotech/jellybeans.vim'
 [[plugins]]
 hook_add = '''
     set updatetime=250 " gitgutterの更新時間を短くする
-    let g:gitgutter_highlight_lines=1 " 変更行をハイライト
+    let g:gitgutter_highlight_lines=0 " 変更行をハイライト
+    highlight GitGutterAdd ctermfg=NONE
+    highlight GitGutterChange ctermfg=NONE
+    highlight GitGutterDelete ctermfg=NONE
+    let g:gitgutter_sign_added = '+'
+    let g:gitgutter_sign_modified = '|'
+    let g:gitgutter_sign_removed = '-'
+    let g:gitgutter_sign_removed_first_line = '^'
+    let g:gitgutter_sign_modified_removed = 'w'
     let g:gitgutter_override_sign_column_highlight=1 " サインカラムのハイライトを上書き
-    highlight GitGutterAdd ctermfg=green
-    highlight GitGutterChange ctermfg=blue
-    highlight GitGutterDelete ctermfg=red
-    let g:gitgutter_sign_added = '++'
-    let g:gitgutter_sign_modified = 'yy'
-    let g:gitgutter_sign_removed = '--'
-    let g:gitgutter_sign_removed_first_line = '^^'
-    let g:gitgutter_sign_modified_removed = 'ww'
 '''
 repo = 'airblade/vim-gitgutter' # show diff
 
@@ -29,7 +29,7 @@ repo = 'tpope/vim-fugitive' #Gdiff
 ### Tree finder
 [[plugins]]
 hook_add = """
-    nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
+    nnoremap fn :Fern . -reveal=% -drawer -toggle -width=40<CR>
 """
 repo = 'lambdalisue/fern.vim'
 
@@ -46,8 +46,6 @@ repo = 'junegunn/fzf'
 
 [[plugins]]
 depends = 'junegunn/fzf'
-hook_add = """
-"""
 repo = 'junegunn/fzf.vim'
 
 [[plugins]]
@@ -73,18 +71,19 @@ let g:airline_theme='angr'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='unique_tail'
 let g:airline#extensions#tabline#buffer_idx_mode=1
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#buffer_idx_format = {
-        \ '0': '0 ',
-        \ '1': '1 ',
-        \ '2': '2 ',
-        \ '3': '3 ',
-        \ '4': '4 ',
-        \ '5': '5 ',
-        \ '6': '6 ',
-        \ '7': '7 ',
-        \ '8': '8 ',
-        \ '9': '9 '
-        \}
+    \ '0': '0 ',
+    \ '1': '1 ',
+    \ '2': '2 ',
+    \ '3': '3 ',
+    \ '4': '4 ',
+    \ '5': '5 ',
+    \ '6': '6 ',
+    \ '7': '7 ',
+    \ '8': '8 ',
+    \ '9': '9 '
+    \}
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#hunks#enabled=1
 let g:airline#extensions#tabline#enabled=1
@@ -98,11 +97,11 @@ repo = 'vim-airline/vim-airline'
 [[plugins]]
 hook_add = """
 let g:indent_guides_enable_on_vim_startup=1 "デフォルトでインデント出す
-    let g:indent_guides_start_level=2 "ガイドをスタートするインデント
-let g:indent_guides_guide_size=1 " ガイドの幅
-    let g:indent_guides_auto_colors = 0
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=gray "奇数インデントのカラー
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray "偶数インデントのカラー
+let g:indent_guides_start_level=2 "ガイドをスタートするインデント
+let g:indent_guides_guide_size=2 " ガイドの幅
+let g:indent_guides_auto_colors = 2
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=NONE "奇数インデントのカラー
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=NONE "偶数インデントのカラー
 """
 repo = 'nathanaelkane/vim-indent-guides'
 
@@ -117,15 +116,20 @@ repo = 'tomtom/tcomment_vim' # comment out
 [[plugins]]
 repo = 'easymotion/vim-easymotion' # make it easy to move few words
 
+[[plugins]]
+repo = 'windwp/nvim-ts-autotag'
+
 
 ## lsp
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
 [[plugins]]
 hook_add = '''
-" TypeScript, JavaScript
 if executable('typescript-language-server')
-    au User lsp_setup call lsp#register_server({
+au User lsp_setup call lsp#register_server({
         \ 'name': 'typescript-language-server',
         \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
         \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'package.json'))},
@@ -133,8 +137,6 @@ if executable('typescript-language-server')
         \ 'whitelist': ['typescript', 'typescript.tsx', 'javascript', 'javascript.jsx'],
         \ })
 endif
-
-" 他言語サーバの読み込みはここに挿入
 '''
 repo = 'prabirshrestha/vim-lsp'
 [[plugins]]
@@ -160,7 +162,6 @@ repo = 'matsui54/ddc-buffer'
 # reop = 'shun/ddc-source-vim-lsp'
 [[plugins]]
 repo = 'tani/ddc-fuzzy'
-
 
 [[plugins]]
 repo = 'hrsh7th/nvim-cmp'
@@ -188,7 +189,6 @@ repo = 'hrsh7th/vim-vsnip'
 #   endif
 #   let g:dein#plugin.build = cmd
 # '''
-# repo = 'Shougo/vimproc.vim'
 # [[plugins]]
 # repo = 'Shougo/unite.vim'
 # [[plugins]]
