@@ -116,10 +116,6 @@ repo = 'tomtom/tcomment_vim' # comment out
 [[plugins]]
 repo = 'easymotion/vim-easymotion' # make it easy to move few words
 
-[[plugins]]
-repo = 'windwp/nvim-ts-autotag'
-
-
 ## lsp
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
@@ -129,7 +125,7 @@ repo = 'mattn/vim-lsp-settings'
 [[plugins]]
 hook_add = '''
 if executable('typescript-language-server')
-au User lsp_setup call lsp#register_server({
+    au User lsp_setup call lsp#register_server({
         \ 'name': 'typescript-language-server',
         \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
         \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'package.json'))},
@@ -163,16 +159,16 @@ repo = 'matsui54/ddc-buffer'
 [[plugins]]
 repo = 'tani/ddc-fuzzy'
 
-[[plugins]]
-repo = 'hrsh7th/nvim-cmp'
-[[plugins]]
-repo = 'hrsh7th/cmp-nvim-lsp'
-[[plugins]]
-repo = 'hrsh7th/cmp-buffer'
-[[plugins]]
-repo = 'hrsh7th/cmp-path'
-[[plugins]]
-repo = 'hrsh7th/vim-vsnip'
+# [[plugins]]
+# repo = 'hrsh7th/nvim-cmp'
+# [[plugins]]
+# repo = 'hrsh7th/cmp-nvim-lsp'
+# [[plugins]]
+# repo = 'hrsh7th/cmp-buffer'
+# [[plugins]]
+# repo = 'hrsh7th/cmp-path'
+# [[plugins]]
+# repo = 'hrsh7th/vim-vsnip'
 
 ### laravel
 ## これらはphp / composerをmacに入れておく必要があるのでやめた

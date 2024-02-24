@@ -129,12 +129,16 @@ nnoremap <Leader>li :LspManageServers<CR> " 「Space l i」を順番に押すと
 nnoremap <Leader>LI :LspInstallServer<CR>
 nnoremap <Leader>ls :LspStatus<CR>
 " nnoremap <Leader>lh :LspHover<CR>" 「Space l h」を順番に押すと、カーソル下の関数などの宣言を参照できます
-nnoremap <C-k> :LspHover<CR>" 「Space l h」を順番に押すと、カーソル下の関数などの宣言を参照できます
+nnoremap ck :LspHover<CR>" 「Space l h」を順番に押すと、カーソル下の関数などの宣言を参照できます
+nnoremap <C-k> :LspPeekDefinition<CR>
 nnoremap ]d :LspNextDiagnostic<CR>
 nnoremap [d :LspPreviousDiagnostic<CR> " 「[ e」を順番に押すと、LSPが検出した前のエラーにジャンプします
 nnoremap ]e :LspNextError<CR>
 nnoremap [e :LspPreviousError<CR> " 「] e」を順番に押すと、LSPが検出した次のエラーにジャンプします
 nnoremap <C-]> :LspDefinition<CR>" 「Ctrl+]」を同時に押すと、カーソル下の関数の宣言箇所へジャンプできます
+nnoremap fm :LspDocumentFormat<CR>
+nnoremap gd :LspDefinition<CR>
+
 
 "======== その他 ========
 set ttimeoutlen=50 "escapeを早く動作させる
