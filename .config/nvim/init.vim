@@ -139,6 +139,7 @@ nnoremap <C-]> :LspDefinition<CR>" 「Ctrl+]」を同時に押すと、カーソ
 nnoremap fm :LspDocumentFormat<CR>
 nnoremap gd :LspDefinition<CR>
 
+let g:lsp_diagnostics_float_delay = 100
 
 "======== その他 ========
 set ttimeoutlen=50 "escapeを早く動作させる

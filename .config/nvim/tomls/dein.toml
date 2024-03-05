@@ -1,7 +1,7 @@
 ## color theme
 [[plugins]]
 hook_add = '''
-    colorscheme slate
+    colorscheme ron
 '''
 repo = 'nanotech/jellybeans.vim'
 
@@ -133,31 +133,46 @@ if executable('typescript-language-server')
         \ 'whitelist': ['typescript', 'typescript.tsx', 'javascript', 'javascript.jsx'],
         \ })
 endif
+
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
 '''
 repo = 'prabirshrestha/vim-lsp'
 [[plugins]]
-repo = 'Shougo/ddc.vim'
+repo = 'prabirshrestha/vim-lsp'
 [[plugins]]
-repo = 'shun/ddc-vim-lsp'
+repo = 'prabirshrestha/asyncomplete.vim'
 [[plugins]]
-repo = 'Shougo/ddc-ui-native'
-#Install Your Sources
-[[plugins]]
-repo = 'Shougo/ddc-source-around'
-# Install your filters
-[[plugins]]
-repo = 'Shougo/ddc-matcher_head'
-[[plugins]]
-repo = 'Shougo/ddc-sorter_rank'
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
 
-[[plugins]]
-repo = 'vim-denops/denops.vim'
-[[plugins]]
-repo = 'matsui54/ddc-buffer'
+# [[plugins]]
+# repo = 'Shougo/ddc.vim'
+# [[plugins]]
+# repo = 'shun/ddc-vim-lsp'
+# [[plugins]]
+# repo = 'Shougo/ddc-ui-native'
+# ## Install Your Sources
+# [[plugins]]
+# repo = 'Shougo/ddc-source-around'
+# ## Install your filters
+# [[plugins]]
+# repo = 'Shougo/ddc-matcher_head'
+# [[plugins]]
+# repo = 'Shougo/ddc-sorter_rank'
+
+# [[plugins]]
+# repo = 'vim-denops/denops.vim'
+# [[plugins]]
+# repo = 'matsui54/ddc-buffer'
 # [[plugins]]
 # reop = 'shun/ddc-source-vim-lsp'
-[[plugins]]
-repo = 'tani/ddc-fuzzy'
+# [[plugins]]
+# repo = 'tani/ddc-fuzzy'
 
 # [[plugins]]
 # repo = 'hrsh7th/nvim-cmp'
