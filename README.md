@@ -66,7 +66,7 @@ cargo install sheldon
 
     ## この2つが必要だった
     sudo apt update
-    sudo apt install build-essential
+    sudo apt install build-essential pkg-config libssl-dev
     ```
 </details>
 
