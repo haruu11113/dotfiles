@@ -108,6 +108,27 @@ pyenv install 3.6.0
 pyenv global 3.6.0
 ```
 
+```
+### 以下やってみた。わからん。
+sudo apt update
+sudo apt install -y \
+  build-essential \
+  libssl-dev \
+  zlib1g-dev \
+  libbz2-dev \
+  libreadline-dev \
+  libsqlite3-dev \
+  libffi-dev \
+  liblzma-dev \
+  tk-dev \
+  libncurses5-dev \
+  libncursesw5-dev \
+  libxml2-dev \
+  libxmlsec1-dev \
+  wget \
+  curl \
+  xz-utils
+```
 
 ## coc
 use python linter
