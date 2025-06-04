@@ -195,6 +195,10 @@ sudo systemctl status docker
 sudo docker run hello-world
 ```
 
+## install tmux
+```
+sudo apt install tmux
+```
 
 ## Google Drive
 https://neos21.hatenablog.com/entry/2020/03/31/080000
