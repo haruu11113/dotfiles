@@ -158,6 +158,12 @@ $ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 $ ~/.fzf/install
 ```
 
+```
+## これも必要だった, for Ubuntu
+sudo apt update
+sudo apt install ripgrep
+```
+
 ## Google Drive
 https://neos21.hatenablog.com/entry/2020/03/31/080000
 ```
