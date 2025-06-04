@@ -103,6 +103,7 @@ brew install neovim
 
 ```
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+pyenv install --list |grep 3.
 pyenv install 3.6.0
 pyenv global 3.6.0
 ```
