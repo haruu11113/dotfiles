@@ -19,6 +19,7 @@ sh ./link.sh
 ### 3. Install Dein (neovim plugin manager)
 https://github.com/Shougo/dein-installer.vim
 ```
+mkdir ~/.vim/
 mkdir ~/.vim/dein/
 cd ~/.vim/dein/
 ~~curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh~~
@@ -61,7 +62,11 @@ cargo install sheldon
     https://outputable.com/post/start-rust/
 
     ```
-    $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+    ## この2つが必要だった
+    sudo apt update
+    sudo apt install build-essential
     ```
 </details>
 
