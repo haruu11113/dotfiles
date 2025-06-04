@@ -17,11 +17,11 @@ execute 'set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim'
 " dein Scripts ===================================================
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state('~/.cache/dein')
-" Your plugins go here:
+  " Your plugins go here:
   call dein#begin('~/.cache/dein')
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-  call dein#load_toml('~/.config/nvim/tomls/dein.toml',      {'lazy': 0})
-  " call dein#load_toml('~/.config/nvim/tomls/dein_lazy.toml', {'lazy': 1})
+  call dein#load_toml('~/.config/nvim/tomls/dein.toml', {'lazy': 0})
+  call dein#load_toml('~/.config/nvim/tomls/dein_lazy.toml', {'lazy': 1})
 
   echo "ToDoをメモろう"
   if dein#check_install()
@@ -60,12 +60,14 @@ set smartindent "オートインデント
 set laststatus=2 "スーテータスバー(2=常に表示, 1=ウィンドウ数が2以上なら, 0表示しない)
 set softtabstop=2 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
 " set cursorline "カーソルがある行を強調
-set list listchars=tab:\▸\-
+set list listchars=tab:\▸\- "タブを表示
 set expandtab "tabの代わりに空白を入れる
 set mouse=a "マウスでの移動
 set mouse=nic
+let mapleader = ' '
 syntax on "シンタクス
-inoremap <silent> jj <ESC>
+inoremap <silent> jj <ESC> "jj=>ESC
+cnoremap jj <C-c> "jj => コマンドラインモード終了
 " noremap <C-j> <ESC>
 
 "" プラグインnanotech/jellybeans.vimの設定. 背景色を透過させる
@@ -114,7 +116,7 @@ if has("autocmd")
     \ endif
 endif
 
-autocmd FileType php setlocal omnifunc=phpactor#Complete
+" autocmd FileType php setlocal omnifunc=phpactor#Complete
 
 "自動閉じカッコ
 imap { {}<LEFT>
@@ -124,11 +126,10 @@ imap ( ()<LEFT>
 "==================================
 " LSP Settings
 "===================================
-" let mapleader = " "
 nnoremap <Leader>li :LspManageServers<CR> " 「Space l i」を順番に押すと、インストール可能なLSP一覧が出ます。インストールもここでできます
 nnoremap <Leader>LI :LspInstallServer<CR>
 nnoremap <Leader>ls :LspStatus<CR>
-" nnoremap <Leader>lh :LspHover<CR>" 「Space l h」を順番に押すと、カーソル下の関数などの宣言を参照できます
+nnoremap <Leader>lh :LspHover<CR>" 「Space l h」を順番に押すと、カーソル下の関数などの宣言を参照できます
 nnoremap ck :LspHover<CR>" 「Space l h」を順番に押すと、カーソル下の関数などの宣言を参照できます
 nnoremap <C-k> :LspPeekDefinition<CR>
 nnoremap ]d :LspNextDiagnostic<CR>
@@ -140,12 +141,22 @@ nnoremap fm :LspDocumentFormat<CR>
 nnoremap gd :LspDefinition<CR>
 
 let g:lsp_diagnostics_float_delay = 100
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+
+let g:lsp_signs_error = {'text': '✗'}
+let g:lsp_signs_warning = {'text': '‼'}
+let g:lsp_signs_hint = {'text': 'h'}
 
 "======== その他 ========
 set ttimeoutlen=50 "escapeを早く動作させる
 set showmatch "閉じカッコ入力時、対応する過去に一瞬移動
-nmap <C-h> <Plug>AirlineSelectPrevTab "タブ移動のショートカット
-nmap <C-l> <Plug>AirlineSelectNextTab "タブ移動のショートカット
+" nmap <C-h> <Plug>AirlineSelectPrevTab "タブ移動のショートカット
+" nmap <C-l> <Plug>AirlineSelectNextTab "タブ移動のショートカット
+nnoremap <C-h> :bprev<CR>   " タブ移動用
+nnoremap <C-l> :bnext<CR>
+nnoremap <Leader>1 :tabprevious<CR>
+nnoremap <Leader>2 :tabnext<CR>
 
 " map <C-n> :NERDTreeToggle<CR>
 " let NERDTreeShowHidden = 1
@@ -165,4 +176,4 @@ nnoremap fp :FZF<CR>
 
 set wildmenu
 set wildmode=full
-autocmd BufWritePre <buffer> LspDocumentFormatSync "保存時にフォーマット
+" autocmd BufWritePre <buffer> LspDocumentFormatSync "保存時にフォーマット

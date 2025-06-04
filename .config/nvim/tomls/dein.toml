@@ -1,24 +1,24 @@
 ## color theme
 [[plugins]]
 hook_add = '''
-    colorscheme ron
+colorscheme ron
 '''
 repo = 'nanotech/jellybeans.vim'
 
 ## git
 [[plugins]]
 hook_add = '''
-    set updatetime=250 " gitgutterの更新時間を短くする
-    let g:gitgutter_highlight_lines=0 " 変更行をハイライト
-    highlight GitGutterAdd ctermfg=NONE
-    highlight GitGutterChange ctermfg=NONE
-    highlight GitGutterDelete ctermfg=NONE
-    let g:gitgutter_sign_added = '+'
-    let g:gitgutter_sign_modified = '|'
-    let g:gitgutter_sign_removed = '-'
-    let g:gitgutter_sign_removed_first_line = '^'
-    let g:gitgutter_sign_modified_removed = 'w'
-    let g:gitgutter_override_sign_column_highlight=1 " サインカラムのハイライトを上書き
+set updatetime=250 " gitgutterの更新時間を短くする
+let g:gitgutter_highlight_lines=0 " 変更行をハイライト
+highlight GitGutterAdd ctermfg=NONE
+highlight GitGutterChange ctermfg=NONE
+highlight GitGutterDelete ctermfg=NONE
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '|'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = 'w'
+let g:gitgutter_override_sign_column_highlight=1 " サインカラムのハイライトを上書き
 '''
 repo = 'airblade/vim-gitgutter' # show diff
 
@@ -29,7 +29,7 @@ repo = 'tpope/vim-fugitive' #Gdiff
 ### Tree finder
 [[plugins]]
 hook_add = """
-    nnoremap fn :Fern . -reveal=% -drawer -toggle -width=40<CR>
+nnoremap fn :Fern . -reveal=% -drawer -toggle -width=40<CR>
 """
 repo = 'lambdalisue/fern.vim'
 
@@ -63,34 +63,28 @@ repo = 'ryanoasis/vim-devicons'
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
-
-# https://github.com/vim-airline/vim-airline/wiki/Screenshots
 [[plugins]]
 hook_add = """
 let g:airline_theme='angr'
 let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#formatter='unique_tail'
+let g:airline#extensions#tabline#formatter='unique_tail_improved'
+let g:airline#extensions#tabline#show_buffers=1
+let g:airline#extensions#tabline#show_tabs=1
+let g:airline#extensions#tabline#show_tab_nr=1
 let g:airline#extensions#tabline#buffer_idx_mode=1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#buffer_idx_format = {
-    \ '0': '0 ',
-    \ '1': '1 ',
-    \ '2': '2 ',
-    \ '3': '3 ',
-    \ '4': '4 ',
-    \ '5': '5 ',
-    \ '6': '6 ',
-    \ '7': '7 ',
-    \ '8': '8 ',
-    \ '9': '9 '
-    \}
+let g:airline#extensions#tabline#current_tab_highlight=1
+let g:airline#extensions#tabline#show_splits=1
+let g:airline#extensions#tabline#tab_nr_type=1
+let g:airline#extensions#tabline#buffers_label='B'
+let g:airline#extensions#tabline#tabs_label='T'
+let g:airline#extensions#tabline#layout = [['tabs_before', ' ', 'tabs'], ['buffers_before', ' ', 'buffers', ' ', 'buffers_after']]
+let g:airline_powerline_fonts=1
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#hunks#enabled=1
-let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#wordcount#enabled=1
-let g:airline#extensions#branch#vcs_checks = []
+let g:airline#extensions#branch#vcs_checks=[]
 let g:airline#extensions#default#layout=[['a', 'b', 'c'], ['wordcount', 'error', 'warning', 'x', 'y', 'z']]
-let g:airline_section_c = '%t'
+let g:airline_section_c = '%f%m >'
 """
 repo = 'vim-airline/vim-airline'
 
@@ -116,12 +110,14 @@ repo = 'tomtom/tcomment_vim' # comment out
 [[plugins]]
 repo = 'easymotion/vim-easymotion' # make it easy to move few words
 
+
 ## lsp
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
+
 [[plugins]]
 hook_add = '''
 if executable('typescript-language-server')
@@ -141,12 +137,18 @@ if executable('pyls')
         \ 'whitelist': ['python'],
         \ })
 endif
+
+" laravelのblade ファイルを php と html の両方に適用
+augroup blade_lsp
+  autocmd!
+  autocmd BufRead,BufNewFile *.blade.php setlocal filetype=php.html
+augroup END
 '''
 repo = 'prabirshrestha/vim-lsp'
-[[plugins]]
-repo = 'prabirshrestha/vim-lsp'
+
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
+
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
 
@@ -213,7 +215,7 @@ repo = 'leafgarland/typescript-vim'
 
 [[plugins]]
 hook_add = '''
-    source ~/.config/nvim/plugins/vim-vue.rc.vim
+source ~/.config/nvim/plugins/vim-vue.rc.vim
 '''
 repo = 'posva/vim-vue'
 
