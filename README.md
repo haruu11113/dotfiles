@@ -148,8 +148,19 @@ https://github.com/nvm-sh/nvm
 ※nodejs lts(v14.15.0)がインストールされる
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+nvm install 22.17.0
+nvm use 22.17.0
+nvm alias default --lts
+```
+
+```
 nvm install --lts
 nvm use --lts
+```
+
+[https://github.com/google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)
+```
+npm install -g @google/gemini-cli
 ```
 
 ## fzf
