@@ -22,36 +22,40 @@ dotfiles=(
     ".config/nvim/plugins/syntastic-local-eslint.rc.vim"
 )
 for f in ${dotfiles[@]}; do
-    echo ${f}
+    echo "--- ${f} ---"
     echo "リンク作成を開始します"
-    if [ -e ~/${f} ]; then
+
+    # リンク先の親ディレクトリを作成
+    mkdir -p "$(dirname "$HOME/$f")"
+
+    if [ -e "$HOME/$f" ]; then
         echo "./old/に${f}を移動"
-        mv ~/${f} ./old/
-        echo ""~" に${f}のリンクを作成"
-        ln -s ${PWD}/${f} ~/${f}
-        echo "======"
-    else
-        echo ""~" に${f}のリンクを作成"
-        ln -s ${PWD}/${f} ~/${f}
-        echo "====="
+        mkdir -p "./old/$(dirname "$f")"
+        mv "$HOME/$f" "./old/$f"
     fi
+
+    echo "~ に${f}のリンクを作成"
+    ln -s "$PWD/$f" "$HOME/$f"
+    echo "=========="
 done
 
 
-#!/usr/bin/zsh
-dotfiles=(".zshrc")
-for f in ${dotfiles[@]}; do
-    echo ${f}
+# zshrcの処理
+zsh_dotfiles=(".zshrc")
+for f in ${zsh_dotfiles[@]}; do
+    echo "--- ${f} ---"
     echo "リンク作成を開始します"
-    if [ -e ~/${f} ]; then
+
+    # リンク先の親ディレクトリを作成
+    mkdir -p "$(dirname "$HOME/$f")"
+
+    if [ -e "$HOME/$f" ]; then
         echo "./old/に${f}を移動"
-        mv ~/${f} ./old/
-        echo ""~" に${f}のリンクを作成"
-        ln -s ${PWD}/zsh/${f} ~/${f}
-        echo "======"
-    else
-        echo ""~" に${f}のリンクを作成"
-        ln -s ${PWD}/zsh/${f} ~/${f}
-        echo "====="
+        mkdir -p "./old/$(dirname "$f")"
+        mv "$HOME/$f" "./old/$f"
     fi
+
+    echo "~ に${f}のリンクを作成"
+    ln -s "$PWD/zsh/$f" "$HOME/$f"
+    echo "=========="
 done
