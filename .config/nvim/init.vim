@@ -64,11 +64,12 @@ set list listchars=tab:\▸\- "タブを表示
 set expandtab "tabの代わりに空白を入れる
 set mouse=a "マウスでの移動
 set mouse=nic
-let mapleader = ' '
+let mapleader = ' ' "Leaderキーをスペースに設定
 syntax on "シンタクス
 inoremap <silent> jj <ESC> "jj=>ESC
 cnoremap jj <C-c> "jj => コマンドラインモード終了
 " noremap <C-j> <ESC>
+
 
 "" プラグインnanotech/jellybeans.vimの設定. 背景色を透過させる
 "" colorscheme desertはhookですることでoverriteを成功させている
@@ -131,15 +132,27 @@ nnoremap <Leader>LI :LspInstallServer<CR>
 nnoremap <Leader>ls :LspStatus<CR>
 nnoremap <Leader>lh :LspHover<CR>" 「Space l h」を順番に押すと、カーソル下の関数などの宣言を参照できます
 nnoremap ck :LspHover<CR>" 「Space l h」を順番に押すと、カーソル下の関数などの宣言を参照できます
-nnoremap <C-k> :LspPeekDefinition<CR>
 nnoremap ]d :LspNextDiagnostic<CR>
 nnoremap [d :LspPreviousDiagnostic<CR> " 「[ e」を順番に押すと、LSPが検出した前のエラーにジャンプします
 nnoremap ]e :LspNextError<CR>
 nnoremap [e :LspPreviousError<CR> " 「] e」を順番に押すと、LSPが検出した次のエラーにジャンプします
 nnoremap <C-]> :LspDefinition<CR>" 「Ctrl+]」を同時に押すと、カーソル下の関数の宣言箇所へジャンプできます
-nnoremap fm :LspDocumentFormat<CR>
+nnoremap fm :LspDocumentFormat<CR> "ファイル全体をフォーマット
 nnoremap gd :LspDefinition<CR>
+nnoremap <C-k> :LspPeekDefinition<CR>:sleep 30m<CR>:wincmd w<CR> "Definitionを表示
 
+function! CloseFloatingIfAny()
+  let winid = win_getid()
+  if nvim_win_get_config(winid)['relative'] != ''
+    call nvim_win_close(winid, v:true)
+  endif
+endfunction
+nnoremap <C-q> :call CloseFloatingIfAny()<CR> "Definitionを表示中のfloating windowを閉じる
+
+set winblend=10
+let g:lsp_diagnostics_float_delay = 0
+let g:lsp_preview_max_width = 80
+let g:lsp_preview_max_heignth = 80
 let g:lsp_diagnostics_float_delay = 100
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
