@@ -10,7 +10,8 @@ HISTSIZE=50000
 SAVEHIST=50000
 export LSCOLORS=gxHxcxdxbxegedabagacad # lsの時に色をつける
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 大小文字を区別しない
-PROMPT=" %F{green}pro ( '_') %f %c $ " # プロンプト autoload -U compinit # 補完
+PROMPT=" %F{green}pro ( '_') %f %c $ " # プロンプト
+autoload -U compinit # 補完
 compinit # 補完
 
 XDG_CONFIG_HOME=$HOME/.config
@@ -37,12 +38,14 @@ alias t="tmux"
 alias ide="sh ~/ide"
 alias ide2="sh ~/ide2"
 alias ide3="sh ~/ide3"
+alias ai="sh ~/tmp_llm_terminal.sh"
 alias vbs="VBoxManage startvm --type headless"
 alias tarunz="tar -xvzfp"
 alias tarz="tar -cvzfp"
 alias -g B='`git branch --all | grep -v HEAD | fzf -m | sed "s/.* //" | sed "s#remotes/[^/]*/##"`'
 alias vim="nvim"
 alias ctags="`brew --prefix`/bin/ctags"
+alias ghr="gh pr view --web"
 # alias vf="vim \$(fzf)"
 # alias open="xdg-open"
 #rmをゴミ箱行きに変更
