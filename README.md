@@ -4,7 +4,7 @@ This is my zsh, tmux and vim setup.
 ## Get Start to Use
 ### 1. Please clone this repository on your PC.
 ```
-clone git@github.com:haruu11113/haruu11113.git
+clone git@github.com:haruu11113/dotfiles.git
 cd haruu11113/dotfiles
 ```
 
