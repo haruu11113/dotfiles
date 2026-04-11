@@ -211,6 +211,38 @@ sudo docker run hello-world
 sudo apt install tmux
 ```
 
+## aerospace
+
+mac用です
+
+設定ファイル: `.config/aerospace/aerospace.toml`
+
+## 便利コマンド
+コンフィグ修正後のリロード
+```bash
+aerospace reload-config
+```
+
+
+on-window-detectedに設定するidを確認するコマンド
+```bash
+aerospace list-apps
+```
+
+- [参考にした記事](https://qiita.com/showchan33/items/b08b7b0f6feb6a47c70f)
+- [参考にした記事](https://zenn.dev/mozumasu/articles/mozumasu-window-costomization)
+
+### JankyBordersのインストール
+
+```bash
+brew tap FelixKratz/formulae
+brew install borders
+
+brew services start borders
+```
+[参考にしたきじ](https://github.com/FelixKratz/JankyBorders?tab=readme-ov-file)
+
+
 ## Google Drive
 https://neos21.hatenablog.com/entry/2020/03/31/080000
 ```
