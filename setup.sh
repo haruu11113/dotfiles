@@ -21,6 +21,7 @@ dotfiles=(
     ".config/nvim/plugins/vim-pug-complete.rc.vim"
     ".config/nvim/plugins/vim-vue.rc.vim"
     ".config/nvim/plugins/syntastic-local-eslint.rc.vim"
+    ".config/aerospace/aerospace.toml"
 )
 for f in ${dotfiles[@]}; do
     echo "--- ${f} ---"
