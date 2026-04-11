@@ -29,3 +29,6 @@ Temporary Items
 vimsession*
 ##ctag
 /tags
+
+
+**/.claude/settings.local.json

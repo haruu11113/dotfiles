@@ -136,15 +136,24 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 source $HOME/.cargo/env
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/harukaneko/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/harukaneko/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '~/google-cloud-sdk/path.zsh.inc' ]; then . '~/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/harukaneko/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '~/google-cloud-sdk/completion.zsh.inc' ]; then . '~/google-cloud-sdk/completion.zsh.inc'; fi
 
 # ruby
-  export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
-  export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 
-export PATH=$PATH:/Users/harukaneko/Library/Android/sdk/platform-tools
+export PATH=$PATH:~/Library/Android/sdk/platform-tools
 
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
+# Added by Windsurf
+export PATH="~/.codeium/windsurf/bin:$PATH"
+
+# OpenClaw Completion
+source "~/.openclaw/completions/openclaw.zsh"
