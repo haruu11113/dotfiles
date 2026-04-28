@@ -133,7 +133,7 @@ alt-a = 'workspace A' # In your config, you can drop workspace bindings that you
 alt-b = 'workspace B'
 alt-c = 'workspace C'
 alt-d = 'workspace D'
-# alt-e = 'workspace E'
+alt-e = 'workspace E'
 # alt-f = 'workspace F'
 # alt-g = 'workspace G'
 # alt-i = 'workspace I'
@@ -142,12 +142,12 @@ alt-n = 'workspace N'
 # alt-o = 'workspace O'
 # alt-p = 'workspace P'
 # alt-q = 'workspace Q'
-# alt-r = 'workspace R'
+alt-r = 'workspace R'
 alt-s = 'workspace S'
-# alt-t = 'workspace T'
+alt-t = 'workspace T'
 # alt-u = 'workspace U'
 # alt-v = 'workspace V'
-# alt-w = 'workspace W'
+ alt-w = 'workspace W'
 # alt-x = 'workspace X'
 # alt-y = 'workspace Y'
 # alt-z = 'workspace Z'
@@ -166,7 +166,7 @@ alt-shift-a = 'move-node-to-workspace A'
 alt-shift-b = 'move-node-to-workspace B'
 alt-shift-c = 'move-node-to-workspace C'
 alt-shift-d = 'move-node-to-workspace D'
-# alt-shift-e = 'move-node-to-workspace E'
+alt-shift-e = 'move-node-to-workspace E'
 # alt-shift-f = 'move-node-to-workspace F'
 # alt-shift-g = 'move-node-to-workspace G'
 # alt-shift-i = 'move-node-to-workspace I'
@@ -175,12 +175,12 @@ alt-shift-n = 'move-node-to-workspace N'
 # alt-shift-o = 'move-node-to-workspace O'
 # alt-shift-p = 'move-node-to-workspace P'
 # alt-shift-q = 'move-node-to-workspace Q'
-# alt-shift-r = 'move-node-to-workspace R'
+alt-shift-r = 'move-node-to-workspace R'
 alt-shift-s = 'move-node-to-workspace S'
-# alt-shift-t = 'move-node-to-workspace T'
+alt-shift-t = 'move-node-to-workspace T'
 # alt-shift-u = 'move-node-to-workspace U'
 # alt-shift-v = 'move-node-to-workspace V'
-# alt-shift-w = 'move-node-to-workspace W'
+alt-shift-w = 'move-node-to-workspace W'
 # alt-shift-x = 'move-node-to-workspace X'
 # alt-shift-y = 'move-node-to-workspace Y'
 # alt-shift-z = 'move-node-to-workspace Z'
@@ -227,14 +227,15 @@ run = 'move-node-to-workspace D'
 
 [[on-window-detected]]
 if.app-id = 'notion.id'
-run = 'move-node-to-workspace D'
+run = 'move-node-to-workspace B'
+
 [[on-window-detected]]
 if.app-id = 'com.vivaldi.vivaldi'
-run = 'move-node-to-workspace 1'
+run = 'move-node-to-workspace A'
 
 [[on-window-detected]]
 if.app-id = 'com.readdle.SparkDesktop.appstore'
-run = 'move-node-to-workspace B'
+run = ['move-node-to-workspace D', 'resize width 1400']
 
 [[on-window-detected]]
 if.app-id = 'com.readdle.smartemail-Mac'
@@ -245,12 +246,17 @@ if.app-id = 'com.microsoft.teams2'
 run = 'move-node-to-workspace D'
 
 [[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace W'
+
+
+[[on-window-detected]]
 if.app-id = 'com.todoist.mac.Todoist'
 run = ['resize width 1400']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
-run = ['resize width 1500']
+run = ['move-node-to-workspace B', 'resize width 1500']
 
 [[on-window-detected]]
 if.app-id = 'jp.naver.line.mac'
@@ -265,15 +271,19 @@ run = 'move-node-to-workspace B'
 1 = ['^Japan.*', '^DELL.*', 'main']
 2 = ['^Japan.*', '^DELL.*', 'main']
 3 = ['^Japan.*', '^DELL.*', 'main']
-4 = ['^PLX.*', 'secondary']
+4 = ['^PLX.*', '^U13ZA.*']
 5 = ['^PLX.*', 'secondary']
 6 = ['^PLX.*', 'secondary']
 7 = 'built-in'
 8 = ['^EV.*', 'secondary']
 9 = ['^EV.*', 'secondary']
 A = ['^Japan.*', '^DELL.*', 'main']
-B = ['built-in', 'main']
+W = ['^Japan.*', '^DELL.*', 'main']
+B = ['built-in', '^U13ZA.*', 'main']
+E = ['built-in', '^U13ZA.*', 'main']
 C = ['^PLX.*', 'secondary']
-D = ['^EV.*', 'secondary']
+R = ['^PLX.*', 'secondary']
+D = ['^EV.*', '^U13ZA.*']
+T = ['^EV.*', '^U13ZA.*']
 N = ['^EV.*', 'secondary']
 S = ['^EV.*', 'built-in']
