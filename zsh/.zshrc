@@ -38,6 +38,13 @@ alias t="tmux"
 alias ide="sh ~/ide"
 alias ide2="sh ~/ide2"
 alias ide3="sh ~/ide3"
+
+# フォルダごとの tmux セッションを自動作成（対応表は tmux-sessions.sh を編集）
+# tmux の中からは実行しない（多重起動防止）
+if [ -z "$TMUX" ] && [ -f "$HOME/work/dotfiles/tmux-sessions.sh" ]; then
+    sh "$HOME/work/dotfiles/tmux-sessions.sh"
+fi
+
 alias ai="sh ~/tmp_llm_terminal.sh"
 alias vbs="VBoxManage startvm --type headless"
 alias tarunz="tar -xvzfp"

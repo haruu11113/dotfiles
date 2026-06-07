@@ -246,6 +246,10 @@ if.app-id = 'com.microsoft.teams2'
 run = 'move-node-to-workspace D'
 
 [[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = 'move-node-to-workspace D'
+
+[[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace W'
 
@@ -279,10 +283,10 @@ run = 'move-node-to-workspace B'
 9 = ['^EV.*', 'secondary']
 A = ['^Japan.*', '^DELL.*', 'main']
 W = ['^Japan.*', '^DELL.*', 'main']
-B = ['built-in', '^U13ZA.*', 'main']
-E = ['built-in', '^U13ZA.*', 'main']
-C = ['^PLX.*', 'secondary']
-R = ['^PLX.*', 'secondary']
+B = ['built-in', '^EV.*', '^U13ZA.*', 'main']
+E = ['^Japan.*', '^U13ZA.*', 'main']
+C = ['^PLX.*', '^Japan.*']
+R = ['^PLX.*', '^Japan.*']
 D = ['^EV.*', '^U13ZA.*']
 T = ['^EV.*', '^U13ZA.*']
 N = ['^EV.*', 'secondary']
