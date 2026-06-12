@@ -12,6 +12,9 @@ wearos-sensor-kit|~/work/android-os/wearos
 PomoTimerForWearOS|~/work/android-os/PomoTimerForWearOS
 eneact2-beanstalk|~/work/docker/eneact2-beanstalk/backend
 repo|~/work/docker/predict_Detailes/repo
+doctorThesis|~/work/paper/202601_doctor_thesis_haru
+review|~/work/paper/202604_scoping_review_about_supervised_contrastive_learning
+SPReAD|~/work/paper/budget/202606_buget_SPReAD_2nd
 # ここまで 
 '
 # =============================================
